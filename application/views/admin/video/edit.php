@@ -26,7 +26,7 @@ if(($this->session->userdata('is_client_login')==false))
     <h1>Edit Video</h1>
     <hr>
 
-            <form method="post" class="form-horizontal"  action=""<?= base_url().'admin/video/edit_video_save';?>" enctype="multipart/form-data">
+            <form method="post" class="form-horizontal"  action="<?= base_url().'admin/video/edit_video_save';?>" enctype="multipart/form-data">
                 <input type="hidden" value="<?=$video_show[0]['id']; ?>" name="id" >
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label">Url:</label>

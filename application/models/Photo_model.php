@@ -18,14 +18,18 @@ class Photo_model extends CI_Model {
         return $query->result_array();
     }
 /////////////////////////admin/////////////////////////////
-    function get_photo_admin($id, $num=null, $offset=null) {
-
-
-        if (isset($id)) {
-            $this->db->where('id', $id);
+    function get_photo_admin($page_number, $per_page = null)
+    {
+        $page_number = $page_number-1;
+        if ($page_number<0) {
+            $page_number = 0;
         }
-        $query = $this->db->get('photo',$num, $offset);
-        return $query->result_array();
+        $from = $page_number*$per_page;
+        $this->db->order_by("id", "desc");
+        $this->db->limit($per_page, $from);
+        $query = $this->db->get("photo");
+        $result = $query->result_array();
+        return $result;
     }
     function edit_photo($data) {
         $this->db->update('photo', $data, array('id' => $data['id']));

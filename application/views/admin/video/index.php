@@ -1,61 +1,5 @@
-<?php
-//require_once '..//header.php';
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="<?= base_url().'public/bootstrap/css/bootstrap.min.css';?>">
-    <link rel="stylesheet" href="<?= base_url().'public/bootstrap/css/bootstrap.css';?>">
-    <link rel="stylesheet" href="<?= base_url().'public/css/style.css';?>">
-    <script type="text/javascript" src="<?= base_url().'public/bootstrap/js/jquery-1.11.3.min.js';?>"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <meta charset="utf-8">
-    <title>Admin</title>
-    <style>
-
-        body {
-            font-family: 'Lato';
-        }
 
 
-    </style>
-</head>
-<body>
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-
-            <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <!-- Branding Image -->
-            <a class="navbar-brand" href="<?= base_url().'welcome';?>">
-                Home
-            </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                <li><a href="<?= base_url().'admin/news';?>">News</a></li>
-                <li><a href="<?= base_url().'admin/photo';?>">Photo</a></li>
-                <li><a href="<?= base_url().'admin/video';?>">Video</a></li>
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right">
-                <!-- Authentication Links -->
-                <li><a href="<?= base_url().'user/logout';?>">Logout</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
     <?php if($this->session->flashdata('success')){ ?>
        <div class="alert alert-success" id="success-alert">
     <button type="button" class="close" data-dismiss="alert">x</button>
@@ -76,8 +20,8 @@
     <h2 class="text-center"></h2>
     <div class="container">
 
-        <h1>Video <a href="<?= base_url().'admin/video/create_video';?>" class="btn btn-primary btn-xs" >
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"/>
+        <h1>Video <a href = "<?=base_url().'/admin/video/create_video';?>" class="btn btn-primary btn-xs" >
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                   <a/>
         </h1>
         <table class="table table-bordered table-striped table-hover" >
@@ -117,8 +61,3 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="<?= base_url().'public/bootstrap/js/bootstrap.min.js';?>"></script>
-    <script type="text/javascript" src="<?= base_url().'/public/js/jquery.js';?>"></script>
-</body>
-
-</html>

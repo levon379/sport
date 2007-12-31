@@ -4,9 +4,7 @@
     <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../public/css/style.css">
-    <script type="text/javascript" src="../public/bootstrap/js/jquery-1.11.3.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../public/css/unslider.css"></script>
     <meta charset="utf-8">
     <title>Davit Fahradyan Page</title>
 
@@ -103,7 +101,15 @@
                         <a href="#" class="btn button-video">VIEW ALL VIEDEOS</a>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" id="ytplayer">video slider</div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" id="ytplayer">
+                    <div class="my-slider">
+                        <ul>
+                            <li>My slide</li>
+                            <li>Another slide</li>
+                            <li>My last slide</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 "></div>
@@ -146,7 +152,7 @@
         <!--            <img src="../public/bootstrap/img/grad_cover.png" />-->
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
             <span class="title-head-our-news">OUR NEWS</span>
-            <a href="<?= base_url().'/welcome/get_all_news/'; ?>">
+            <a href="<?= base_url().'welcome/get_all_news/'; ?>">
                 <span class="link-our-news">View all</span>
             </a>
             <div class="row bottom-border-our-news">
@@ -163,7 +169,7 @@
                             </span>
                     </p>
                     <div class="clear"></div>
-                    <a href="<?= base_url().'/welcome/get_news/'.$item['id']; ?>" class="button-our-news">View more</a>
+                    <a href="<?= base_url().'welcome/get_news/'.$item['id']; ?>" class="button-our-news">View more</a>
                 </div>
 
                 <?php } ?>
@@ -188,6 +194,14 @@
     <!-- our news end -->
 </div>
 
-<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= base_url().'public/bootstrap/js/jquery-1.11.3.min.js';?>"></script>
+<script type="text/javascript" src="<?= base_url().'public/bootstrap/js/bootstrap.min.js';?>"></script>
+<script type="text/javascript" src="<?= base_url().'public/js/script.js';?>"></script>
+<script src="<?= base_url().'public/js/unslider-min.js' ?>"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $('.my-slider').unslider();
+    });
+</script>
 </body>
 </html>

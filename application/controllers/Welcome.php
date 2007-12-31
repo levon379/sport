@@ -44,7 +44,7 @@ class Welcome extends CI_Controller {
 		$this->load->library('form_validation');
 		$config['base_url'] = base_url() . 'index.php/welcome/get_all_news';
 		$config['total_rows'] = $this->db->count_all('news');
-		$config['per_page'] = 10;
+		$config['per_page'] = 4;
 		$config['full_tag_open'] = '<ul class="pagination">';
 		$config['full_tag_close'] = '</ul>';
 		$config['first_link'] = false;
