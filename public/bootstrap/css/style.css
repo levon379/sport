@@ -11,10 +11,17 @@ body{
 }
 .red {
     background-color: rgb(123, 15, 15) !important;
-    height:700px;
+    height:350px;
 }
 .logo {
     background-image: url("../img/logo_cover.png") !important;
     height:150px;
     width:150px;
+}
+.grad {
+
+    background: -webkit-linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10) ); /* Standard syntax */
 }
