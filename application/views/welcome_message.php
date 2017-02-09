@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <meta charset="utf-8">
-    <title>Welcome to CodeIgniter</title>
+    <title>Davit Fahradyan Page</title>
 
 
 </head>
@@ -18,10 +18,7 @@
         <div class="cover col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
                 <div class=" col-lg-4 col-lg-offset-1  col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
-                    <div class="logo">
-                        <img src="../public/img/logo.png"
-                             height="130" width="130" alt="">
-                    </div>
+                        <img src="../public/img/logo.jpg" height="200" width="200"  alt="">
                     <h2 class="welcome-title-head">WELCOME TO OUR</h2>
                     <h1 class="school-title-head">SCHOOL</h1>
                     <h2 class="fahradyan-title-head">DAVID FAHRADYAN</h2>
@@ -31,16 +28,14 @@
                         when an unknown printer took a galley of
                         type and scrambled it to make a type
                     </p>
-                    <div class="div-button-head">
-                        <button type="button" class="button-head">
-                            see more...
-                        </button>
+                    <a href="" class="btn button-head">see more...</a>
+
                         <!-- <a href="" class="btn" style="width:100%;font-size:128%;background: rgb(198, 167, 41);color:white;border-radius:0px;">-->
                         <!-- see more...</a>-->
-                    </div>
+
                 </div>
-                <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1 fahradyan-img">
-                    <img src="../public/img/dav_fah.png" height="500" width="400">
+                <div class="col-lg-6 col-md-6 col-sm-6  col-xs-6">
+<!--                    <img src="../public/img/dav_fah.png" height="500" width="400">-->
                 </div>
             </div>
         </div>
@@ -48,11 +43,10 @@
     <!-- bio awards shcool start-->
     <div class="row about-cover">
         <div class="row about-cover-div">
-            <div
-                class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src="../public/img/school.png" height="180" width="100%">
+                        <img src="../public/img/school.png" height="180" width="100%" class="about-img">
                         <h1 class="about-title">SCHOOL</h1>
                         <p class="about-description">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -61,10 +55,11 @@
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum has been
                         </p>
-                        <a href="" class="btn about-button">see more...</a>
+                        <a href="<?php echo site_url('index/school') ?>" target="_blank" class="btn about-button">see more...</a>
+
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src="../public/img/bio.png" height="180" width="100%">
+                        <img src="../public/img/bio.png" height="180" width="100%" class="about-img">
                         <h1 class="about-title">BIOGRAPHY</h1>
                         <p class="about-description">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -76,7 +71,7 @@
                         <a href="" class="btn about-button">see more...</a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src="../public/img/records.png" height="180" width="100%">
+                        <img src="../public/img/records.png" height="180" width="100%" class="about-img">
                         <h1 class="about-title">RECORDS</h1>
                         <p class="about-description">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.

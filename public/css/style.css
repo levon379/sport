@@ -1,34 +1,21 @@
-body{
-    background-color: gray;
-}
-.container{
 
-
-}
 .cover {
-    background-image: url("../img/head_first.png") !important;
-    height:500px;
+    background-image: url("../img/head.jpg") !important;
+    height:650px !important;
 }
 .about-cover {
     background-color: rgb(123, 15, 15) !important;
     height:350px;
 }
-.logo {
-    background-image: url("../img/logo_cover.png") !important;
-    height:150px;
-    width:150px;
-}
 .grad {
-    height:420px;
-    background: -webkit-linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10) ); /* Standard syntax */
+    height:410px;
+    background-image: url("../img/ournews.png") !important;
 }
 .welcome-title-head{
     color:rgb(178, 25, 25);
     font-weight: bold;
     font-size:140%;
+    margin-top: 30px;
 }
 .school-title-head{
     color:rgb(178, 25, 25);
@@ -54,17 +41,23 @@ body{
     height: 12%;
 }
 .button-head{
-    background: rgb(198, 167, 41);
+    background: -webkit-linear-gradient(rgb(206, 177, 60), rgb(191, 158, 23))!important; /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(206, 177, 60), rgb(191, 158, 23))!important; /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(206, 177, 60), rgb(191, 158, 23))!important; /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(206, 177, 60), rgb(191, 158, 23))!important; /* Standard syntax */
     color: white;
-    width: 100%;
+    border-radius:0px !important;
+    width: 42%;
     height: 95%;
-    font-size: 200%;
+    font-size: 157% !important;
+    border-bottom: 3px solid #5A0A0A !important;
+
 }
 .fahradyan-img{
     margin-top:1%;
 }
 .about-cover-div{
-    margin-top:-7%;
+    margin-top:-10%;
 }
 .about-title{
     color:white;
@@ -163,4 +156,18 @@ body{
 }
 .by-Astudio-panel{
     margin-top:10px;
+}
+.about-img{
+    border-top: 3px solid rgb(178, 25, 25); !important;
+}
+/*school*/
+.img-school-page{
+    width:100%;
+    height:100%;
+}
+.title-school-page{
+    color:rgb(178, 25, 25);
+}
+.description-school-page{
+    margin-top:3%;
 }
