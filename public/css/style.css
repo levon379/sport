@@ -25,3 +25,8 @@ body{
     background: -moz-linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(rgb(132, 17, 17), rgb(88, 10, 10) ); /* Standard syntax */
 }
+.welcome-title{
+    color:rgb(178, 25, 25);
+    font-weight: bold;
+    font-size:140%;
+}
