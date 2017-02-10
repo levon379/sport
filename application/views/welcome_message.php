@@ -153,51 +153,23 @@
                 <span class="link-our-news">View all</span>
             </a>
             <div class="row bottom-border-our-news">
+                <?php
+
+                foreach($news as $item){ ?>
                 <div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
                     <p>
                         <img src="../public/img/records.png" width="60%" height="40%" align="left"/>
-                    <h1 class="title-our-news">NEWS NAME</h1>
-                    <h1 class="secondary-title-our-news">01.01.17</h1>
+                    <h1 class="title-our-news"><?=$item['title']; ?></h1>
+                    <h1 class="secondary-title-our-news"><?=$item['created_date']; ?></h1>
                             <span class="description-our-news">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been
+                        <?=$item['description']; ?>
                             </span>
                     </p>
+                    <div class="clear"></div>
                     <a href="" class="button-our-news">View more</a>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <p>
-                        <img src="../public/img/records.png" width="60%" height="40%" align="left"/>
-                    <h1 class="title-our-news">NEWS NAME</h1>
-                    <h1 class="secondary-title-our-news">01.01.17</h1>
-                            <span class="description-our-news">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been
-                            </span>
-                    </p>
-                    <a href="" class="button-our-news">View more</a>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <p>
-                        <img src="../public/img/records.png" width="60%" height="40%" align="left"/>
-                    <h1 class="title-our-news">NEWS NAME</h1>
-                    <h1 class="secondary-title-our-news">01.01.17</h1>
-                            <span class="description-our-news">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been
-                            </span>
-                    </p>
-                    <a href="" class="button-our-news">View more</a>
-                </div>
+
+                <?php } ?>
             </div>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>

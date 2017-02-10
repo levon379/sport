@@ -1,5 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+if(($this->session->userdata('is_client_login')==false))
+{
+    redirect('/user/login', 'location');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,35 +45,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-    <form method="post" id="form_news" action="http://sport.dev/index.php/admin/adminnews/add_news_about" hidden enctype="multipart/form-data" >
-        <input type="hidden" id="id" name="id"  >
-        <div class="form-group">
-            <label for="exampleInputEmail1" >Title:</label>
-            <input type="text" class="form-control "  id="title" name="title">
-        </div>
-            <input type="text" class="form-control "   id="datetimepicker4" name="created_date">
-      <div class="form-group">
-           <input type="file"  name="file"/>
-<!--           <img src="/img/image1.jpeg"   alt="img" style="max-width:140px;max-height:140px; " class="img-rounded img-rounded" id="img">-->
-        </div>
-  
-        <div class="form-group">
-            <label for="comment">Description:</label>
-            <textarea class="form-control" rows="5" id="text" name="description"></textarea>
-        </div>
-
-
-
-        <button type="submit" class="btn btn-default">Save</button>
-    </form>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
 
-                <a href="javascript:void();" class="add_news btn btn-primary" > Add <a/>
+                <a href="http://sport.dev/index.php/admin/adminnews/create_news" class="add_news btn btn-primary" > Add <a/>
                 <table class="table table-hover" >
                     <thead>
                         <tr>
@@ -82,17 +60,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($news_cat as $items): ?>
+                        <?php foreach ($news as $items): ?>
                             <tr>
                                 <td > <img src="/img/image1.jpeg"   alt="img" /></td>
                                 <td class="title" >  <a href="<?= base_url() . 'index.php/admin/adminnews/admin_news_about/' . $items['id']; ?>" ><?= $items['title']; ?></a> </a></td>
                                 <td scope="row"><?= $items['description']; ?></td>
                                 <td scope="row"><?= $items['created_date']; ?></td>
                                 <td >
-                                    <a  class="edit_news btn btn-success" 
-                                        data_id="<?= $items['id']; ?>" data_text="<?= $items['description']; ?>"
-                                        data_date="<?= $items['created_date']; ?>" data_title="<?= $items['title']; ?>" data_img="<?= $items['image']; ?>"
-                                         href="javascript:void();">edit<a/>
+                                    <a  class="edit_news btn btn-success" href="edit_news/<?= $items['id']; ?>">edit<a/>
                                 </td>
                                 <td ><a class="delete_news btn btn-danger" data="<?= $items['id']; ?>" href="delete_news_about/<?= $items['id']; ?>">delete   <a/></td>
                             </tr>
@@ -100,10 +75,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </tbody>
                 </table>
                     <br />
-    <div class="clear pagination">
-        
+
+    <div class=" pagination">
             <?php echo $this->pagination->create_links();  ?>
-          
+
     </div>
             </div>
         </div>

@@ -4,12 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Adminnews extends CI_Controller {
 
-    public function index($id = null) {
 
-        $this->load->model('News_model');
-        $data['news'] = $this->News_model->get_news();
-        $this->load->view('admin_cat_view', $data);
-    }
 
     public function add_categories() {
         $this->load->helper(array('form', 'url'));
@@ -52,16 +47,7 @@ class Adminnews extends CI_Controller {
         }
     }
 
-    public function delete_category($id) {
 
-
-        $this->load->model('Category_model');
-        $this->Category_model->delete_categories($id);
-        redirect('/admin/adminnews', 'location');
-    }
-
-    /* End of file welcome.php */
-    /* Location: ./application/controllers/Welcome.php */
 
     public function newsindex($id = null) {
 
@@ -92,7 +78,7 @@ class Adminnews extends CI_Controller {
         //var_dump($this->uri->segment(3));die;
         $this->pagination->initialize($config);
         $this->load->model('news_model');
-        $data['news_cat'] = $this->news_model->get_news_cat($id, $config['per_page'], $this->uri->segment(4));
+        $data['news'] = $this->news_model->get_news_admin($id, $config['per_page'], $this->uri->segment(5));
 
         $this->load->view('admin_news_view', $data);
     }
@@ -102,28 +88,36 @@ class Adminnews extends CI_Controller {
         $data['news_about'] = $this->news_model->get_news_about($id);
         $this->load->view('news_about_view', $data);
     }
-
-    public function add_news_about() {
+    public function create_news() {
+        $this->load->view('admin_news_create');
+    }
+    public function edit_news($id) {
+        $this->load->model('news_model');
+        $data['news_about'] = $this->news_model->get_news_about($id);
+      //var_dump($data['news_about'][0]['description']); die;
+        $this->load->view('admin_news_edit',$data);
+    }
+    public function add_news() {
         $this->load->helper(array('form', 'url'));
-        $this->load->library('session');
         $this->load->library('form_validation');
 
-//        $this->form_validation->set_rules('image', 'image', 'required');
         $this->form_validation->set_rules('title', 'title', 'required');
         $this->form_validation->set_rules('description', 'description', 'required');
 
         if ($this->form_validation->run() == FALSE) {
 //                        $this->load->view('admin_news_view');
-            $this->session->set_flashdata('delete_error_message', 'Information created');
+            $this->session->set_flashdata('delete_error_message', 'try again');
             redirect('/admin/adminnews/newsindex', 'location');
             $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
         } else {
             $data['title'] = $this->input->post('title');
-
             $data['description'] = $this->input->post('description');
-            $data['created_date'] = $this->input->post('created_date');
+            $data['created_date'] = date('Y-m-d');
 
             $config['upload_path'] = base_url().'index.php/public/uploads/';
+            var_dump(is_writable($config['upload_path']));
+
+            die;
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '1000';
             $this->load->library('upload', $config);
@@ -132,12 +126,8 @@ class Adminnews extends CI_Controller {
             $data['image'] = $image_data['file_name'];
 
 
-
-
-
             echo $this->upload->display_errors('<p style="color:#FF0000;">', '</p>');
 
-die;
             $this->load->model('news_model');
             $this->news_model->add_news($data);
 
@@ -146,15 +136,12 @@ die;
         }
     }
 
-    public function admin_news_about_edit() {
+    public function edit_news_save() {
         $this->load->helper(array('form', 'url'));
-
         $this->load->library('form_validation');
-        $this->load->library('session');
-        $this->form_validation->set_rules('date', 'date', 'required');
+
         $this->form_validation->set_rules('title', 'title', 'required');
-        $this->form_validation->set_rules('author', 'author', 'required');
-        $this->form_validation->set_rules('text', 'text', 'required');
+        $this->form_validation->set_rules('description', 'description', 'required');
 
         if ($this->form_validation->run() == FALSE) {
 //                        $this->load->view('admin_news_view');
@@ -163,21 +150,18 @@ die;
         } else {
             $data['id'] = $this->input->post('id');
             $data['title'] = $this->input->post('title');
-            $data['author'] = $this->input->post('author');
-            $data['text'] = $this->input->post('text');
-            $data['create_date'] = $this->input->post('date');
-            $data['category_id'] = $this->input->post('change_category');
-            $config['upload_path'] = '/var/www/code/application/libraries/bootstrap/img/';
+            $data['description'] = $this->input->post('description');
+
+            $config['upload_path'] = base_url().'index.php/public/uploads/';
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '1000';
 
             $this->load->library('upload', $config);
             $this->upload->do_upload();
             $image_data = $this->upload->data();
-            $data['img'] = $image_data['file_name'];
-
+            $data['image'] = $image_data['file_name'];
             $this->load->model('news_model');
-            $this->news_model->edit_news_about($data);
+            $this->news_model->edit_news($data);
 
             $this->session->set_flashdata('success', 'Information edited');
             redirect('/admin/adminnews/newsindex', 'location');
