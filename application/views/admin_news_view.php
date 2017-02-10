@@ -33,10 +33,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo validation_errors(); ?>
 
 
-    <h2>News</h2>
-
-
+    <h2 class="text-center">News</h2>
     <div class="container">
+        <div class="row">
+        <div class="col-lg-1 col-lg-offset-10 col-md-1 col-md-offset-10 col-sm-1  col-sm-offset-10 col-xs-1 col-xs-offset-10">
+    <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
+        </div>
+        </div>
         <div class="row">
             <div class="col-md-6">
     <form method="post" id="form_news" action="http://sport.dev/index.php/admin/adminnews/add_news_about" hidden enctype="multipart/form-data" >
@@ -60,11 +63,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <button type="submit" class="btn btn-default">Save</button>
     </form>
-            </div></div>
+            </div>
+        </div>
 
-    <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
 
                 <a href="javascript:void();" class="add_news btn btn-primary" > Add <a/>
                 <table class="table table-hover" >

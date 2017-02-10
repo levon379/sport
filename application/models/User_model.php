@@ -11,7 +11,6 @@ class User_model extends CI_Model {
 
                 if ($val->num_rows()) {
                     foreach ($val->result_array() as $recs => $res) {
-                      
                         $this->session->set_userdata(array(
                             'id' => $res['id'],
                             'username' => $res['username'],
