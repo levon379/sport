@@ -37,16 +37,16 @@ $("#datetimepicker4").val(date);
 $("#text").val(text);
 $("#author").val(author);
 $("#change_category").val(change_cat);
-$("#img").attr('src','http://localhost/code/application/libraries/bootstrap/img/'+img).show();
+$("#img").attr('src','http://localhost/code//application/libraries/bootstrap/img/'+img).show();
 
- $('#form_news').attr('action', 'http://localhost/code/index.php/admin/adminnews/admin_news_about_edit').show();
+ //$('#form_news').attr('action', 'http://sport.dev/admin/adminnews/admin_news_about_edit').show();
 
 
 //$("#form_news.form-group").find("label").text("Edit Name");
    
      });
    $(".add_news").click(function(){
-       $('#form_news').attr('action', 'http://localhost/code/index.php/admin/adminnews/add_news_about').show();
+       $('#form_news').show();
 $("#id").val('');
 $("#title").val('');
 $("#datetimepicker4").val('');

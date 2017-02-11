@@ -14,25 +14,17 @@
 </head>
 <body>
 <div class="container-fluid">
-
-    <h1 class="text-center title-school-page"> <?=$school[0]['title']; ?></h1>
+<h2 class="text-center">View<h2/>
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-1 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
-            <img src="../../public/img/<?=$school[0]['image']; ?>"  class="img-school-page">
+            <iframe width="420" height="315" src="<?=$video_show[0]['url']; ?>">
+            </iframe>
         </div>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 
     </div>
     </div>
-    <div class="row description-school-page">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-1 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
-            <pre> <?=$school[0]['description']; ?>
-            </pre>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 
-        </div>
-    </div>
 </div>
 
 <script type="text/javascript" src="../../public/bootstrap/js/bootstrap.min.js"></script>

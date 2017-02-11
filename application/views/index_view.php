@@ -18,7 +18,7 @@
         <div class="cover col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
                 <div class=" col-lg-4 col-lg-offset-1  col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
-                        <img src="../public/img/logo.jpg" height="200" width="200"  alt="">
+                    <img src="../public/img/logo.jpg" height="200" width="200"  alt="">
                     <h2 class="welcome-title-head">WELCOME TO OUR</h2>
                     <h1 class="school-title-head">SCHOOL</h1>
                     <h2 class="fahradyan-title-head">DAVID FAHRADYAN</h2>
@@ -30,12 +30,12 @@
                     </p>
                     <a href="" class="btn button-head">see more...</a>
 
-                        <!-- <a href="" class="btn" style="width:100%;font-size:128%;background: rgb(198, 167, 41);color:white;border-radius:0px;">-->
-                        <!-- see more...</a>-->
+                    <!-- <a href="" class="btn" style="width:100%;font-size:128%;background: rgb(198, 167, 41);color:white;border-radius:0px;">-->
+                    <!-- see more...</a>-->
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6  col-xs-6">
-<!--                    <img src="../public/img/dav_fah.png" height="500" width="400">-->
+                    <!--                    <img src="../public/img/dav_fah.png" height="500" width="400">-->
                 </div>
             </div>
         </div>
@@ -46,13 +46,16 @@
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src="../public/img/<?=$school[0]['image']; ?>" height="180" width="100%" class="about-img">
-
-                        <h1 class="about-title"><?=$school[0]['title']; ?></h1>
+                        <img src="../public/img/school.png" height="180" width="100%" class="about-img">
+                        <h1 class="about-title">SCHOOL</h1>
                         <p class="about-description">
-                            <?=$school[0]['description']; ?>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been
                         </p>
-                        <a href="<?php echo site_url('welcome/school') ?>" target="_blank" class="btn about-button">see more...</a>
+                        <a href="<?php echo site_url('index/school') ?>" target="_blank" class="btn about-button">see more...</a>
 
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -153,18 +156,18 @@
                 <?php
 
                 foreach($news as $item){ ?>
-                <div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
-                    <p>
-                        <img src="../public/img/records.png" width="60%" height="40%" align="left"/>
-                    <h1 class="title-our-news"><?=$item['title']; ?></h1>
-                    <h1 class="secondary-title-our-news"><?=$item['created_date']; ?></h1>
+                    <div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                        <p>
+                            <img src="../public/img/records.png" width="60%" height="40%" align="left"/>
+                        <h1 class="title-our-news"><?=$item['title']; ?></h1>
+                        <h1 class="secondary-title-our-news"><?=$item['created_date']; ?></h1>
                             <span class="description-our-news">
                         <?=$item['description']; ?>
                             </span>
-                    </p>
-                    <div class="clear"></div>
-                    <a href="" class="button-our-news">View more</a>
-                </div>
+                        </p>
+                        <div class="clear"></div>
+                        <a href="" class="button-our-news">View more</a>
+                    </div>
 
                 <?php } ?>
             </div>

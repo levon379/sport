@@ -1,9 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-if(($this->session->userdata('is_client_login')==false))
-{
-    redirect('/user/login', 'location');
-}
+//require_once '..//header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,28 +12,26 @@ if(($this->session->userdata('is_client_login')==false))
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <meta charset="utf-8">
     <title>Admin</title>
-<!--info@mpsit.am-->
-<!--590075-->
 </head>
 <body>
     <?php if($this->session->flashdata('success')){ ?>
        <div class="alert alert-success" id="success-alert">
     <button type="button" class="close" data-dismiss="alert">x</button>
     <strong>Success! </strong>
-    Product have added to your wishlist.
+    Product have added to your list.
 </div>
     <?php  } ?>
      <?php if($this->session->flashdata('delete_error_message')){ ?>
        <div class="alert alert-danger" id="alert-danger">
     <button type="button" class="close" data-dismiss="alert">x</button> 
     <strong>Success! </strong>
-    Product not have added to your wishlist. Try again
+    Product not have added to your list. Try again
 </div>
     <?php  } ?>
     <?php echo validation_errors(); ?>
 
 
-    <h2 class="text-center">News</h2>
+    <h2 class="text-center">Photo</h2>
     <div class="container">
         <div class="row">
         <div class="col-lg-1 col-lg-offset-10 col-md-1 col-md-offset-10 col-sm-1  col-sm-offset-10 col-xs-1 col-xs-offset-10">
@@ -47,29 +41,38 @@ if(($this->session->userdata('is_client_login')==false))
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
 
-                <a href="http://sport.dev/index.php/admin/adminnews/create_news" class="add_news btn btn-primary" > Add <a/>
+                <a href="http://sport.dev/index.php/admin/photo/create_photo" class="add_photo btn btn-primary" >
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"/>
+                    <a/>
                 <table class="table table-hover" >
                     <thead>
                         <tr>
                             <th>Photo</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th> created_date</th>
+                            <th>View</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($news as $items): ?>
+                        <?php foreach ($photo as $items): ?>
                             <tr>
-                                <td > <img src="/img/image1.jpeg"   alt="img" /></td>
-                                <td class="title" >  <a href="<?= base_url() . 'index.php/admin/adminnews/admin_news_about/' . $items['id']; ?>" ><?= $items['title']; ?></a> </a></td>
-                                <td scope="row"><?= $items['description']; ?></td>
-                                <td scope="row"><?= $items['created_date']; ?></td>
-                                <td >
-                                    <a  class="edit_news btn btn-success" href="edit_news/<?= $items['id']; ?>">edit<a/>
+
+                                <td> <img src="<?php echo '/../public/uploads/photo/'. $items['file_name']; ?>" vidth="50" height="50"  alt="img" /></td>
+                                <td>
+                                    <a  class="btn btn-primary" href="<?= base_url().'index.php/admin/photo/admin_photo_show/'.$items['id']; ?>">
+                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
+                                    <a/>
                                 </td>
-                                <td ><a class="delete_news btn btn-danger" data="<?= $items['id']; ?>" href="delete_news_about/<?= $items['id']; ?>">delete   <a/></td>
+                                <td >
+                                    <a class="edit_photo btn btn-success" href="http://sport.dev/index.php/admin/photo/edit_photo/<?= $items['id']; ?>">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
+                                    <a/>
+                                </td>
+                                <td >
+                                    <a class="delete_photo btn btn-danger" data="<?= $items['id']; ?>" href="http://sport.dev/index.php/admin/photo/delete_photo/<?= $items['id']; ?>">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    <a/>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

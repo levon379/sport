@@ -18,6 +18,13 @@ class Index extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function index()
+	{
+		$this->load->model('News_model');
+		$data['news'] = $this->News_model->get_news();
+		$this->load->view('index_view', $data);
+	}
+
 	public function school()
 	{
 		$this->load->view('school');

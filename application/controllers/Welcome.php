@@ -22,6 +22,20 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('News_model');
 		$data['news'] = $this->News_model->get_news();
+
+		$this->load->model('School_model');
+		$data['school'] = $this->School_model->get_school();
+
+		$this->load->model('Photo_model');
+		$data['photo'] = $this->Photo_model->get_photo();
+
 		$this->load->view('welcome_message', $data);
 	}
+	public function school()
+	{
+		$this->load->model('School_model');
+		$data['school'] = $this->School_model->get_school();
+		$this->load->view('school',$data);
+	}
+
 }

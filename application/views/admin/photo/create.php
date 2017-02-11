@@ -29,23 +29,15 @@ if(($this->session->userdata('is_client_login')==false))
         </div>
     </div>
 
-    <h2 class="text-center">Create News</h2>
+    <h2 class="text-center">Create Photo</h2>
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6  col-sm-offset-3 col-xs-6 col-xs-offset-4">
-            <form method="post" id="form_news" action="http://sport.dev/index.php/admin/adminnews/add_news" enctype="multipart/form-data">
-                <input type="hidden" id="id" name="id">
+            <form method="post"  action="http://sport.dev/index.php/admin/photo/add_photo" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Title:</label>
-                    <input type="text" class="form-control " id="title" name="title">
+                    <input type="file" name="userfile"/>
                 </div>
-                <div class="form-group">
-                    <input type="file" name="file"/>
-                </div>
-                <div class="form-group">
-                    <label for="comment">Description:</label>
-                    <textarea class="form-control" rows="5" id="text" name="description"></textarea>
-                </div>
-                <button type="submit" class="btn btn-default">Save</button>
+
+                <button type="submit" class=" right btn btn-default">Save</button>
             </form>
         </div>
     </div>

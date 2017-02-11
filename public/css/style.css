@@ -137,7 +137,13 @@
     width:103%
 }
 .description-our-news{
-    color:white
+    color:white;
+    display: block;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
 }
 .button-our-news{
     font-size:150%;
@@ -170,4 +176,10 @@
 }
 .description-school-page{
     margin-top:3%;
+}
+.left{
+    float:left
+}
+.right{
+    float:right
 }

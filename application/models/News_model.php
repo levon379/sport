@@ -4,15 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class News_model extends CI_Model {
 
-    function get_news_admin($id, $num=null, $offset=null) {
-
-
-        if (isset($id)) {
-            $this->db->where('id', $id);
-        }
-        $query = $this->db->get('news',$num, $offset);
-        return $query->result_array();
-    }
     function get_news() {
 
         $query = $this->db->limit('3');
@@ -21,15 +12,21 @@ class News_model extends CI_Model {
         return $query->result_array();
     }
 
-    function get_news_about($id) {
+    function get_news_show($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('news');
         return $query->result_array();
     }
-//////////////////////////////////////////////////////
+/////////////////////////admin/////////////////////////////
+    function get_news_admin($id, $num=null, $offset=null) {
+        if (isset($id)) {
+            $this->db->where('id', $id);
+        }
+        $query = $this->db->get('news',$num, $offset);
+        return $query->result_array();
+    }
        function edit_news($data) {
          $this->db->update('news', $data, array('id' => $data['id']));
-       // var_dump($a);die;
     }
     function add_news($data){
 
