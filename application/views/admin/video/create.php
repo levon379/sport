@@ -23,25 +23,25 @@ if(($this->session->userdata('is_client_login')==false))
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-1 col-lg-offset-10 col-md-1 col-md-offset-10 col-sm-1  col-sm-offset-10 col-xs-1 col-xs-offset-10">
-            <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
-        </div>
-    </div>
+    <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
+    <h1>Create Video</h1>
+    <hr>
 
-    <h2 class="text-center">Create Video</h2>
-    <div class="row">
-        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6  col-sm-offset-3 col-xs-6 col-xs-offset-4">
-            <form method="post"  action="http://sport.dev/index.php/admin/video/add_video" enctype="multipart/form-data">
+            <form method="post" class="form-horizontal"  action="http://sport.dev/index.php/admin/video/add_video" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Url:</label>
-                    <input type="text" class="form-control " name="url">
-                </div>
+                    <label for="name" class="col-sm-3 control-label">Url:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control " required="required"  name="url">
 
-                <button type="submit" class=" right btn btn-default">Save</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-3">
+                        <input class="btn btn-primary form-control" type="submit" value="Create">
+                    </div>
+                </div>
             </form>
-        </div>
-    </div>
+
 
 
 </div>

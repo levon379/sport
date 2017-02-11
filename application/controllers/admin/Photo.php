@@ -56,13 +56,16 @@ class Photo extends CI_Controller {
     public function add_photo() {
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
-
+        if (empty($_FILES['file_name']['name']))
+        {
+            $this->form_validation->set_rules('file_name', 'Document', 'required');
+        }
             $config['upload_path'] = APPPATH.'/../public/uploads/photo/';
             $config['allowed_types']        = 'gif|jpg|png';
             $config['max_size']             = 1000;
 
             $this->load->library('upload', $config);
-            $this->upload->do_upload('userfile');
+            $this->upload->do_upload('file_name');
 
             $image_data = $this->upload->data();
             $data['file_name'] = rand(1,999).'_'.$image_data['file_name'];
@@ -78,22 +81,26 @@ class Photo extends CI_Controller {
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('url', 'url', 'required');
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-            redirect('/admin/photo', 'location');
-        } else {
             $data['id'] = $this->input->post('id');
-            $data['url'] = $this->input->post('url');
+            $config['upload_path'] = APPPATH.'/../public/uploads/photo/';
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 1000;
 
+            $this->load->library('upload', $config);
+            $this->upload->do_upload('file_name');
+
+            $image_data = $this->upload->data();
+            $data['file_name'] = $image_data['file_name'];
             $this->load->model('photo_model');
+//            var_dump($data);die;
             $this->photo_model->edit_photo($data);
 
+            $this->load->library('session');
             $this->session->set_flashdata('success', 'Information edited');
             redirect('/admin/photo/', 'location');
         }
-    }
+
 
     public function delete_photo($id) {
 

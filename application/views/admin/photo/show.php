@@ -13,15 +13,33 @@
 
 </head>
 <body>
-<div class="container-fluid">
-<h2 class="text-center">View<h2/>
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-1 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
-            <img src="<?php echo '/../public/uploads/photo/'. $photo_show[0]['file_name']; ?>" widhh="300" height="400" >
-        </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+<div class="container">
 
-    </div>
+    <h1>Photo show</h1>
+    <hr>
+    <div class="table">
+        <table class="table table-bordered table-striped table-hover" >
+
+            <thead>
+            <tr>
+                <th>Photo name </th>
+                <th>Photo</th>
+
+            </tr>
+
+
+            <tbody>
+            <tr>
+                <td>
+                    <?php echo $photo_show[0]['file_name']; ?>
+                </td>
+                <td>
+                    <img src="<?php echo '/../public/uploads/photo/'. $photo_show[0]['file_name']; ?>" widhh="150" height="150" >
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
     </div>
 
 </div>

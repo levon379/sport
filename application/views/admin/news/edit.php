@@ -18,36 +18,48 @@ if(($this->session->userdata('is_client_login')==false))
     <title>Admin</title>
 
 </head>
+<style>
+
+    body {
+        font-family: 'Lato';
+    }
+
+</style>
 <body>
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-1 col-lg-offset-10 col-md-1 col-md-offset-10 col-sm-1  col-sm-offset-10 col-xs-1 col-xs-offset-10">
             <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
-        </div>
-    </div>
-
-    <h2 class="text-center">Edit News</h2>
-    <div class="row">
-        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6  col-sm-offset-3 col-xs-6 col-xs-offset-4">
-            <form method="post" id="form_news" action="http://sport.dev/index.php/admin/news/edit_news_save" enctype="multipart/form-data">
+    <h1>Edit News</h1>
+    <hr>
+            <form method="post" class="form-horizontal" id="form_news" action="http://sport.dev/index.php/admin/news/edit_news_save" enctype="multipart/form-data">
                 <input type="hidden" value="<?=$news_show[0]['id']; ?>" name="id" >
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Title:</label>
-                    <input type="text" class="form-control " value="<?=$news_show[0]['title']; ?>" id="title" name="title">
+                    <label for="name" class="col-sm-3 control-label">Title</label>
+                    <div class="col-sm-6">
+                    <input type="text" class="form-control " value="<?=$news_show[0]['title']; ?>" required="required" name="title">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <img src="/img/image1.jpeg"   alt="img" />
-                    <input type="file" name="file"/>
+                    <label for="name" class="col-sm-3 control-label">Upload file</label>
+                    <div class=" col-sm-6">
+                        <img src="<?php echo '/../public/uploads/news/'. $news_show[0]['file_name']; ?>" vidth="50" height="50"  alt="img" />
+                        <input type="file" name="file_name"/>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="comment">Description:</label>
-                    <textarea class="form-control" rows="5  id="text" name="description"><?=$news_show[0]['description']; ?></textarea>
+                    <label for="description" class="col-sm-3 control-label">Description:</label>
+                    <div class="col-sm-6">
+                        <textarea class="form-control" cols="50" rows="10"  name="description"><?=$news_show[0]['description']; ?></textarea>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-default">Edit</button>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-3">
+                        <input class="btn btn-primary form-control" type="submit" value="Update">
+                    </div>
+                </div>
+
             </form>
-        </div>
     </div>
 
 

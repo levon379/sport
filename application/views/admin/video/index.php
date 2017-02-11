@@ -31,45 +31,35 @@
     <?php echo validation_errors(); ?>
 
 
-    <h2 class="text-center">Video</h2>
+    <h2 class="text-center"></h2>
     <div class="container">
-        <div class="row">
-        <div class="col-lg-1 col-lg-offset-10 col-md-1 col-md-offset-10 col-sm-1  col-sm-offset-10 col-xs-1 col-xs-offset-10">
-    <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
+        <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
 
-                <a href="http://sport.dev/index.php/admin/video/create_video" class="add_video btn btn-primary" >
+        <h1>Video <a href="http://sport.dev/index.php/admin/video/create_video" class="btn btn-primary btn-xs" >
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"/>
-                    <a/>
-                <table class="table table-hover" >
-                    <thead>
-                        <tr>
-                            <th>url</th>
-                            <th>View</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
+                  <a/>
+        </h1>
+        <table class="table table-bordered table-striped table-hover" >
+            <thead>
+            <tr>
+                <th>Url</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+
                     <tbody>
                         <?php foreach ($video as $items): ?>
                             <tr>
 
                                 <td scope="row"><?= $items['url']; ?></td>
                                 <td >
-                                    <a  class="btn btn-primary" href="<?= base_url().'index.php/admin/video/admin_video_show/'.$items['id']; ?>">
+                                    <a  title="View Video" class="btn btn-success btn-xs"  href="<?= base_url().'index.php/admin/video/admin_video_show/'.$items['id']; ?>">
                                         <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
                                     <a/>
-                                </td>
-                                <td >
-                                    <a class="edit_video btn btn-success" href="http://sport.dev/index.php/admin/video/edit_video/<?= $items['id']; ?>">
+                                    <a title="Edit Video" class="btn btn-primary btn-xs" href="http://sport.dev/index.php/admin/video/edit_video/<?= $items['id']; ?>">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
                                     <a/>
-                                </td>
-                                <td >
-                                    <a class="delete_video btn btn-danger" data="<?= $items['id']; ?>" href="http://sport.dev/index.php/admin/video/delete_video/<?= $items['id']; ?>">
+                                    <a title="Delete Video" class="btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="http://sport.dev/index.php/admin/video/delete_video/<?= $items['id']; ?>">
                                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                     <a/>
                                 </td>

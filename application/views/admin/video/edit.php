@@ -22,27 +22,24 @@ if(($this->session->userdata('is_client_login')==false))
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-1 col-lg-offset-10 col-md-1 col-md-offset-10 col-sm-1  col-sm-offset-10 col-xs-1 col-xs-offset-10">
-            <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
-        </div>
-    </div>
+    <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
+    <h1>Edit Video</h1>
+    <hr>
 
-    <h2 class="text-center">Edit Video</h2>
-    <div class="row">
-        <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6  col-sm-offset-3 col-xs-6 col-xs-offset-4">
-            <form method="post"  action="http://sport.dev/index.php/admin/video/edit_video_save" enctype="multipart/form-data">
+            <form method="post" class="form-horizontal"  action="http://sport.dev/index.php/admin/video/edit_video_save" enctype="multipart/form-data">
                 <input type="hidden" value="<?=$video_show[0]['id']; ?>" name="id" >
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Url:</label>
-                    <input type="text" class="form-control " value="<?=$video_show[0]['url']; ?>"  name="url">
+                    <label for="name" class="col-sm-3 control-label">Url:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control " value="<?=$video_show[0]['url']; ?>" required="required" name="title">
+                    </div>
                 </div>
-                <button type="submit" class="right btn btn-default">Edit</button>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-3">
+                        <input class="btn btn-primary form-control" type="submit" value="Update">
+                    </div>
+                </div>
             </form>
-        </div>
-    </div>
-
-
 </div>
 <script type="text/javascript" src="http://sport.dev/public/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://sport.dev/public/js/jquery.js"></script>

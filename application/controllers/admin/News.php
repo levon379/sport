@@ -59,8 +59,12 @@ class News extends CI_Controller {
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('title', 'title', 'required');
-        $this->form_validation->set_rules('description', 'description', 'required');
+        $this->form_validation->set_rules('title', 'title', 'trim|required');
+        $this->form_validation->set_rules('description', 'description', 'trim|required');
+        if (empty($_FILES['file_name']['name']))
+        {
+            $this->form_validation->set_rules('file_name', 'Document', 'required');
+        }
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('delete_error_message', 'try again');
@@ -72,18 +76,19 @@ class News extends CI_Controller {
             $data['created_date'] = date('d.m.y');
 
             $config['upload_path'] = APPPATH.'/../public/uploads/news/';
-
-           // die;
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '1000';
             $this->load->library('upload', $config);
-            $this->upload->do_upload('file');
+            $this->upload->do_upload('file_name');
             $image_data = $this->upload->data();
-            $data['image'] = $image_data['file_name'];
-
-
-            echo $this->upload->display_errors('<p style="color:#FF0000;">', '</p>');
-
+            $data['file_name'] = $image_data['file_name'];
+            if ($this->upload->do_upload('file_name') === FALSE)
+            {
+                // Some error occured
+                var_dump($this->upload->display_errors('', ''));
+//                var_dump($_FILES);die;
+            }
+//            echo $this->upload->display_errors('<p style="color:#FF0000;">', '</p>');
             $this->load->model('news_model');
             $this->news_model->add_news($data);
 
@@ -107,14 +112,14 @@ class News extends CI_Controller {
             $data['title'] = $this->input->post('title');
             $data['description'] = $this->input->post('description');
 
-            $config['upload_path'] = base_url().'index.php/public/uploads/';
+            $config['upload_path'] = APPPATH.'/../public/uploads/news/';
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '1000';
-
             $this->load->library('upload', $config);
-            $this->upload->do_upload();
+            $this->upload->do_upload('file_name');
             $image_data = $this->upload->data();
-            $data['image'] = $image_data['file_name'];
+            $data['file_name'] = $image_data['file_name'];
+
             $this->load->model('news_model');
             $this->news_model->edit_news($data);
 

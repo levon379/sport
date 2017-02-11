@@ -13,27 +13,29 @@
 
 </head>
 <body>
-<div class="container-fluid">
 
-    <h1 class="text-center title-school-page"> <?=$news_show[0]['title']; ?></h1>
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-1 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
-            <img src="../../public/img/<?=$news_show[0]['image']; ?>" >
-        </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 
-    </div>
-    </div>
-    <div class="row description-school-page">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-1 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
-            <pre> <?=$news_show[0]['description']; ?>
-            </pre>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 
-        </div>
+<div class="container">
+
+    <h1>News show</h1>
+    <hr>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <tbody>
+            <tr><th> Photo </th><td> <img src="../../public/img/<?=$news_show[0]['file_name']; ?>" > </td></tr>
+            <tr><th> Title </th><td> <?=$news_show[0]['title']; ?> </td></tr>
+            <tr><th> Description </th><td> <?=$news_show[0]['description']; ?></td></tr>
+            </tbody>
+        </table>
     </div>
+
 </div>
+
+
+
+
+
 
 <script type="text/javascript" src="../../public/bootstrap/js/bootstrap.min.js"></script>
 </body>

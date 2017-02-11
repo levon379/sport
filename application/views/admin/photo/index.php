@@ -31,26 +31,19 @@
     <?php echo validation_errors(); ?>
 
 
-    <h2 class="text-center">Photo</h2>
     <div class="container">
-        <div class="row">
-        <div class="col-lg-1 col-lg-offset-10 col-md-1 col-md-offset-10 col-sm-1  col-sm-offset-10 col-xs-1 col-xs-offset-10">
     <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
-
-                <a href="http://sport.dev/index.php/admin/photo/create_photo" class="add_photo btn btn-primary" >
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"/>
-                    <a/>
-                <table class="table table-hover" >
+    <h1 >Photo
+        <a href="http://sport.dev/index.php/admin/photo/create_photo" class="btn btn-primary btn-xs" >
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"/>
+        <a/>
+    </h1>
+        <div class="table">
+            <table class="table table-bordered table-striped table-hover" >
                     <thead>
                         <tr>
                             <th>Photo</th>
-                            <th>View</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,17 +52,13 @@
 
                                 <td> <img src="<?php echo '/../public/uploads/photo/'. $items['file_name']; ?>" vidth="50" height="50"  alt="img" /></td>
                                 <td>
-                                    <a  class="btn btn-primary" href="<?= base_url().'index.php/admin/photo/admin_photo_show/'.$items['id']; ?>">
+                                    <a title="View News" class="btn btn-success btn-xs" href="<?= base_url().'index.php/admin/photo/admin_photo_show/'.$items['id']; ?>">
                                         <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
                                     <a/>
-                                </td>
-                                <td >
-                                    <a class="edit_photo btn btn-success" href="http://sport.dev/index.php/admin/photo/edit_photo/<?= $items['id']; ?>">
+                                    <a title="Edit News" class="edit_photo btn btn-primary btn-xs" href="http://sport.dev/index.php/admin/photo/edit_photo/<?= $items['id']; ?>">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
                                     <a/>
-                                </td>
-                                <td >
-                                    <a class="delete_photo btn btn-danger" data="<?= $items['id']; ?>" href="http://sport.dev/index.php/admin/photo/delete_photo/<?= $items['id']; ?>">
+                                    <a title="Delete News" class="delete_photo btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="http://sport.dev/index.php/admin/photo/delete_photo/<?= $items['id']; ?>">
                                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                     <a/>
                                 </td>
@@ -77,6 +66,7 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+            </div>
                     <br />
 
     <div class=" pagination">
