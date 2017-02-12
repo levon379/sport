@@ -21,12 +21,11 @@
     </header>
     <section>
         <div id="container_demo" >
-            <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
             <a class="hiddenanchor" id="toregister"></a>
             <a class="hiddenanchor" id="tologin"></a>
             <div id="wrapper">
                 <div id="login" class="animate form">
-                    <form  action="http://sport.dev/index.php/user/login" method="POST" autocomplete="on">
+                    <form  action="<?= base_url().'user/login';?>" method="POST" autocomplete="on">
                         <h1>Log in</h1>
                         <p>
                             <label for="username" class="uname" > Your email or username </label>
