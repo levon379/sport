@@ -38,4 +38,43 @@ class Welcome extends CI_Controller {
 		$this->load->view('school',$data);
 	}
 
+	public function get_all_news($id = null)
+	{
+		$this->load->library('pagination');
+		$this->load->library('form_validation');
+		$config['base_url'] = base_url() . 'index.php/welcome/get_all_news';
+		$config['total_rows'] = $this->db->count_all('news');
+		$config['per_page'] = 10;
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['full_tag_close'] = '</ul>';
+		$config['first_link'] = false;
+		$config['last_link'] = false;
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = '<li class="prev">';
+		$config['prev_tag_close'] = '</li>';
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		//var_dump($this->uri->segment(3));die;
+		$this->pagination->initialize($config);
+		$this->load->model('news_model');
+		$data['all_news'] = $this->news_model->get_news_admin($id, $config['per_page'], $this->uri->segment(3));
+
+		$this->load->view('all_news', $data);
+	}
+	public function get_news($id)
+	{
+		$this->load->model('news_model');
+		$data['news_show'] = $this->news_model->get_news_show($id);
+		$this->load->view('news_show', $data);
+	}
+
 }

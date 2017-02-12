@@ -26,7 +26,7 @@ if(($this->session->userdata('is_client_login')==false))
 
     <h1>Edit News</h1>
     <hr>
-    <form method="post" class="form-horizontal" action="http://sport.dev/admin/photo/edit_photo_save" enctype="multipart/form-data">
+    <form method="post" class="form-horizontal" action=""<?= base_url().'admin/photo/edit_photo_save';?>" enctype="multipart/form-data">
         <input type="hidden" value="<?= $photo_show[0]['id']; ?>" name="id">
 
         <div class="form-group">

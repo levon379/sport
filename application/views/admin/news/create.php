@@ -34,7 +34,7 @@ if(($this->session->userdata('is_client_login')==false))
 
     <h1>Create News</h1>
     <hr>
-            <form method="post" class="form-horizontal" id="form_news" action="http://sport.dev/admin/news/add_news" enctype="multipart/form-data">
+            <form method="post" class="form-horizontal" id="form_news" action=""<?= base_url().'admin/news/add_news';?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label">Title</label>
                     <div class="col-sm-6">

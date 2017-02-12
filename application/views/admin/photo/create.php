@@ -27,7 +27,7 @@ if(($this->session->userdata('is_client_login')==false))
     <h1>Create Photo</h1>
     <hr>
 
-            <form method="post" class="form-horizontal"  action="http://sport.dev/admin/photo/add_photo" enctype="multipart/form-data">
+            <form method="post" class="form-horizontal"  action=""<?= base_url().'admin/photo/add_photo';?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label">Upload file</label>
                     <div class=" col-sm-6">

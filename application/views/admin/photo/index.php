@@ -34,7 +34,7 @@
     <div class="container">
     <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
     <h1 >Photo
-        <a href="http://sport.dev/index.php/admin/photo/create_photo" class="btn btn-primary btn-xs" >
+        <a href="<?= base_url().'admin/photo/create_photo';?>" class="btn btn-primary btn-xs" >
             <span class="glyphicon glyphicon-plus" aria-hidden="true"/>
         <a/>
     </h1>
@@ -55,10 +55,10 @@
                                     <a title="View News" class="btn btn-success btn-xs" href="<?= base_url().'/admin/photo/admin_photo_show/'.$items['id']; ?>">
                                         <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
                                     <a/>
-                                    <a title="Edit News" class="edit_photo btn btn-primary btn-xs" href="http://sport.dev/admin/photo/edit_photo/<?= $items['id']; ?>">
+                                    <a title="Edit News" class="edit_photo btn btn-primary btn-xs" href="<?= base_url().'admin/photo/edit_photo/'.$items['id']; ?>">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
                                     <a/>
-                                    <a title="Delete News" class="delete_photo btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="http://sport.dev/admin/photo/delete_photo/<?= $items['id']; ?>">
+                                    <a title="Delete News" class="delete_photo btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="<?= base_url().'admin/photo/delete_photo/'.$items['id']; ?>">
                                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                     <a/>
                                 </td>

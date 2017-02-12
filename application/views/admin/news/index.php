@@ -34,7 +34,7 @@
     <div class="container">
     <a href="http://sport.dev/user/logout" class="btn btn-info">Log out</a>
 
-        <h1>Our News <a href="http://sport.dev/admin/news/create_news" class="btn btn-primary btn-xs" title="Add New News"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></h1>
+        <h1>Our News <a href=""<?= base_url().'admin/news/create_news';?>" class="btn btn-primary btn-xs" title="Add New News"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></h1>
 <div class="table">
                 <table class="table table-bordered table-striped table-hover" >
                     <thead>
@@ -57,10 +57,10 @@
                                     <a title="View News" class="btn btn-success btn-xs" href="<?= base_url().'admin/news/admin_news_show/'.$items['id']; ?>">
                                         <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
                                     <a/>
-                                    <a  title="Edit News" class="edit_news btn btn-primary btn-xs" href="http://sport.dev/admin/news/edit_news/<?= $items['id']; ?>">
+                                    <a  title="Edit News" class="edit_news btn btn-primary btn-xs" href=""<?= base_url().'admin/news/edit_news/'. $items['id']; ?>">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
                                     <a/>
-                                    <a title="Delete News" class="delete_news btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="http://sport.dev/admin/news/delete_news/<?= $items['id']; ?>">
+                                    <a title="Delete News" class="delete_news btn btn-danger btn-xs" data="<?= $items['id']; ?>" href=""<?= base_url().'admin/news/delete_news/'. $items['id']; ?>">
                                         <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete Role"></span>
                                     <a/>
                                 </td>

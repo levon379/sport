@@ -146,7 +146,7 @@
         <!--            <img src="../public/bootstrap/img/grad_cover.png" />-->
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
             <span class="title-head-our-news">OUR NEWS</span>
-            <a href="#">
+            <a href="<?= base_url().'/welcome/get_all_news/'; ?>">
                 <span class="link-our-news">View all</span>
             </a>
             <div class="row bottom-border-our-news">
@@ -155,7 +155,7 @@
                 foreach($news as $item){ ?>
                 <div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
                     <p>
-                        <img src="../public/img/records.png" width="60%" height="40%" align="left"/>
+                        <img src="../public/img/<?=$item['file_name']; ?>" width="60%" height="40%" align="left"/>
                     <h1 class="title-our-news"><?=$item['title']; ?></h1>
                     <h1 class="secondary-title-our-news"><?=$item['created_date']; ?></h1>
                             <span class="description-our-news">
@@ -163,7 +163,7 @@
                             </span>
                     </p>
                     <div class="clear"></div>
-                    <a href="" class="button-our-news">View more</a>
+                    <a href="<?= base_url().'/welcome/get_news/'.$item['id']; ?>" class="button-our-news">View more</a>
                 </div>
 
                 <?php } ?>
