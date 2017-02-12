@@ -138,11 +138,8 @@
 }
 .description-our-news{
     color:white;
-    display: block;
 
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    width:100%;
 
 }
 .button-our-news{

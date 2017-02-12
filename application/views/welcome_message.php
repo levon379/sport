@@ -159,7 +159,7 @@
                     <h1 class="title-our-news"><?=$item['title']; ?></h1>
                     <h1 class="secondary-title-our-news"><?=$item['created_date']; ?></h1>
                             <span class="description-our-news">
-                        <?=$item['description']; ?>
+                        <?=substr($item['description'], 0, 300);?>
                             </span>
                     </p>
                     <div class="clear"></div>

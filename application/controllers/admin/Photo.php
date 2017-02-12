@@ -68,7 +68,7 @@ class Photo extends CI_Controller {
             $this->upload->do_upload('file_name');
 
             $image_data = $this->upload->data();
-            $data['file_name'] = rand(1,999).'_'.$image_data['file_name'];
+            $data['file_name'] = $image_data['file_name'];
             $this->load->model('photo_model');
             $this->photo_model->add_photo($data);
 

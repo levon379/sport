@@ -53,13 +53,13 @@
 
                                 <td scope="row"><?= $items['url']; ?></td>
                                 <td >
-                                    <a  title="View Video" class="btn btn-success btn-xs"  href="<?= base_url().'index.php/admin/video/admin_video_show/'.$items['id']; ?>">
+                                    <a  title="View Video" class="btn btn-success btn-xs"  href="<?= base_url().'admin/video/admin_video_show/'.$items['id']; ?>">
                                         <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
                                     <a/>
-                                    <a title="Edit Video" class="btn btn-primary btn-xs" href="http://sport.dev/index.php/admin/video/edit_video/<?= $items['id']; ?>">
+                                    <a title="Edit Video" class="btn btn-primary btn-xs" href="http://sport.dev/admin/video/edit_video/<?= $items['id']; ?>">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
                                     <a/>
-                                    <a title="Delete Video" class="btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="http://sport.dev/index.php/admin/video/delete_video/<?= $items['id']; ?>">
+                                    <a title="Delete Video" class="btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="http://sport.dev/admin/video/delete_video/<?= $items['id']; ?>">
                                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                     <a/>
                                 </td>

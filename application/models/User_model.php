@@ -21,7 +21,7 @@ class User_model extends CI_Model {
                     }
                     
 
-                    redirect('admin/adminnews/newsindex');
+                    redirect('admin/news');
                 } 
 	}
        

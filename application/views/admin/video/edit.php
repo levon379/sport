@@ -22,11 +22,11 @@ if(($this->session->userdata('is_client_login')==false))
 
 
 <div class="container">
-    <a href="http://sport.dev/index.php/user/logout" class="btn btn-info">Log out</a>
+    <a href="http://sport.dev/user/logout" class="btn btn-info">Log out</a>
     <h1>Edit Video</h1>
     <hr>
 
-            <form method="post" class="form-horizontal"  action="http://sport.dev/index.php/admin/video/edit_video_save" enctype="multipart/form-data">
+            <form method="post" class="form-horizontal"  action="http://sport.dev/admin/video/edit_video_save" enctype="multipart/form-data">
                 <input type="hidden" value="<?=$video_show[0]['id']; ?>" name="id" >
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label">Url:</label>

@@ -52,13 +52,13 @@
 
                                 <td> <img src="<?php echo '/../public/uploads/photo/'. $items['file_name']; ?>" vidth="50" height="50"  alt="img" /></td>
                                 <td>
-                                    <a title="View News" class="btn btn-success btn-xs" href="<?= base_url().'index.php/admin/photo/admin_photo_show/'.$items['id']; ?>">
+                                    <a title="View News" class="btn btn-success btn-xs" href="<?= base_url().'/admin/photo/admin_photo_show/'.$items['id']; ?>">
                                         <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
                                     <a/>
-                                    <a title="Edit News" class="edit_photo btn btn-primary btn-xs" href="http://sport.dev/index.php/admin/photo/edit_photo/<?= $items['id']; ?>">
+                                    <a title="Edit News" class="edit_photo btn btn-primary btn-xs" href="http://sport.dev/admin/photo/edit_photo/<?= $items['id']; ?>">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
                                     <a/>
-                                    <a title="Delete News" class="delete_photo btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="http://sport.dev/index.php/admin/photo/delete_photo/<?= $items['id']; ?>">
+                                    <a title="Delete News" class="delete_photo btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="http://sport.dev/admin/photo/delete_photo/<?= $items['id']; ?>">
                                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                     <a/>
                                 </td>
