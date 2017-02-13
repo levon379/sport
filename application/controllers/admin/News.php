@@ -10,7 +10,7 @@ class News extends CI_Controller {
         $this->load->library('form_validation');
         $config['base_url'] = base_url() . 'admin/news/index';
         $config['total_rows'] = $this->db->count_all('news');
-        $config['per_page'] = 2;
+        $config['per_page'] = 4;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_link'] = false;

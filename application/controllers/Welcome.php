@@ -35,7 +35,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('School_model');
 		$data['school'] = $this->School_model->get_school();
-		$this->load->view('school',$data);
+		$data['title'] = 'School';
+		$this->template->load('default', 'school', $data);
 	}
 
 	public function get_all_news($id = null)
@@ -68,13 +69,15 @@ class Welcome extends CI_Controller {
 		$this->load->model('news_model');
 		$data['all_news'] = $this->news_model->get_news_admin($id, $config['per_page'], $this->uri->segment(3));
 
-		$this->load->view('all_news', $data);
+		$data['title'] = 'Our News';
+		$this->template->load('default', 'all_news', $data);
 	}
 	public function get_news($id)
 	{
 		$this->load->model('news_model');
-		$data['news_show'] = $this->news_model->get_news_show($id);
-		$this->load->view('news_show', $data);
+		$data['news_show'] = $this->news_model->get_news_by_id($id);
+		$data['title'] = 'News';
+		$this->template->load('default', 'news_show', $data);
 	}
 
 }

@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/css/style.css">
-    <script src="../public/css/unslider.css"></script>
+    <link rel="stylesheet" href="<?= base_url().'public/bootstrap/css/bootstrap.min.css';?>">
+    <link rel="stylesheet" href="<?= base_url().'public/css/style.css';?>">
     <meta charset="utf-8">
     <title>Davit Fahradyan Page</title>
 
@@ -16,7 +14,7 @@
         <div class="cover col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
                 <div class=" col-lg-4 col-lg-offset-1  col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
-                        <img src="../public/img/logo.jpg" height="200" width="200"  alt="">
+                        <img src="<?= base_url(). 'public/img/logo.jpg';?>" height="200" width="200"  alt="">
                     <h2 class="welcome-title-head">WELCOME TO OUR</h2>
                     <h1 class="school-title-head">SCHOOL</h1>
                     <h2 class="fahradyan-title-head">DAVID FAHRADYAN</h2>
@@ -44,17 +42,17 @@
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src="../public/img/<?=$school[0]['image']; ?>" height="180" width="100%" class="about-img">
+                        <img src="<?= base_url(). 'public/img/'.$school[0]['image']; ?>" height="180" width="100%" class="about-img">
 
                         <h1 class="about-title"><?=$school[0]['title']; ?></h1>
                         <p class="about-description">
                             <?=$school[0]['description']; ?>
                         </p>
-                        <a href="<?php echo site_url('welcome/school') ?>" target="_blank" class="btn about-button">see more...</a>
+                        <a href="<?php echo site_url('welcome/school') ?>" class="btn about-button">see more...</a>
 
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src="../public/img/bio.png" height="180" width="100%" class="about-img">
+                        <img src="<?= base_url(). 'public/img/bio.png';?>" height="180" width="100%" class="about-img">
                         <h1 class="about-title">BIOGRAPHY</h1>
                         <p class="about-description">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -66,7 +64,7 @@
                         <a href="" class="btn about-button">see more...</a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <img src="../public/img/records.png" height="180" width="100%" class="about-img">
+                        <img src="<?= base_url(). 'public/img/records.png';?>" height="180" width="100%" class="about-img">
                         <h1 class="about-title">RECORDS</h1>
                         <p class="about-description">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -101,14 +99,46 @@
                         <a href="#" class="btn button-video">VIEW ALL VIEDEOS</a>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" id="ytplayer">
-                    <div class="my-slider">
-                        <ul>
-                            <li>My slide</li>
-                            <li>Another slide</li>
-                            <li>My last slide</li>
-                        </ul>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" >
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="<?= base_url(). 'public/img/records.png';?>" alt="Chania" width="460" height="345">
+                            </div>
+
+                            <div class="item">
+                                <img src="<?= base_url(). 'public/img/records.png';?>" alt="Chania" width="460" height="345">
+                            </div>
+
+                            <div class="item">
+                                <img src="<?= base_url(). 'public/img/records.png';?>" alt="Flower" width="460" height="345">
+                            </div>
+
+                            <div class="item">
+                                <img src="<?= base_url(). 'public/img/records.png';?>" alt="Flower" width="460" height="345">
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -161,7 +191,7 @@
                 foreach($news as $item){ ?>
                 <div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
                     <p>
-                        <img src="../public/img/<?=$item['file_name']; ?>" width="60%" height="40%" align="left"/>
+                        <img src="<?= base_url(). 'public/img/'.$item['file_name']; ?>" width="60%" height="40%" align="left"/>
                     <h1 class="title-our-news"><?=$item['title']; ?></h1>
                     <h1 class="secondary-title-our-news"><?=$item['created_date']; ?></h1>
                             <span class="description-our-news">
@@ -179,7 +209,7 @@
         <!--footer start-->
         <div class="row">
             <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3  col-sm-offset-1 col-xs-3 col-xs-offset-1 footer-panel">
-                <p><img src="../public/img/phone.png" height="28" width="28" align="left"/>
+                <p><img src="<?= base_url(). 'public/img/phone.png';?>" height="28" width="28" align="left"/>
                     <span class="phone-number">+374 91 00 00 00</span>
                 </p>
             </div>
@@ -197,7 +227,6 @@
 <script type="text/javascript" src="<?= base_url().'public/bootstrap/js/jquery-1.11.3.min.js';?>"></script>
 <script type="text/javascript" src="<?= base_url().'public/bootstrap/js/bootstrap.min.js';?>"></script>
 <script type="text/javascript" src="<?= base_url().'public/js/script.js';?>"></script>
-<script src="<?= base_url().'public/js/unslider-min.js' ?>"></script>
 <script>
     jQuery(document).ready(function($) {
         $('.my-slider').unslider();

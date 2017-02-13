@@ -11,7 +11,6 @@
             font-family: 'Lato';
         }
 
-
     </style>
 </head>
 <body>
@@ -36,12 +35,12 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="<?= base_url().'news';?>">SCHOOL</a></li>
-                    <li><a href="<?= base_url().'photo';?>">bio</a></li>
-                    <li><a href="<?= base_url().'photo';?>">records</a></li>
-                    <li><a href="<?= base_url().'photo';?>">news</a></li>
-                    <li><a href="<?= base_url().'photo';?>">Photo</a></li>
-                    <li><a href="<?= base_url().'video';?>">Video</a></li>
+                    <li><a href="<?= base_url().'welcome/school';?>">School</a></li>
+                    <li><a href="<?= base_url().'welcome/biography';?>">Bio</a></li>
+                    <li><a href="<?= base_url().'welcome/records';?>">Records</a></li>
+                    <li><a href="<?= base_url().'welcome/news';?>">News</a></li>
+                    <li><a href="<?= base_url().'welcome/photo';?>">Photo</a></li>
+                    <li><a href="<?= base_url().'welcome/video';?>">Video</a></li>
                 </ul>
             </div>
         </div>

@@ -12,10 +12,10 @@ class Photo_model extends CI_Model {
         return $query->result_array();
     }
 
-    function get_photo_show($id) {
+    function get_photo_by_id($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('photo');
-        return $query->result_array();
+        return $query->row();
     }
 /////////////////////////admin/////////////////////////////
     function get_photo_admin($page_number, $per_page = null)
@@ -42,7 +42,7 @@ class Photo_model extends CI_Model {
     function delete_photo($id) {
 
         $this->db->where('id', $id);
-        $this->db->delete('photo'); ;
+        $this->db->delete('photo');
     }
 
 
