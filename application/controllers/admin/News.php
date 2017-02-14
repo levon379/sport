@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class News extends CI_Controller {
 
-    public function index($page_number = null) {
+    public function index($offset = 0) {
         //////////pagiantion
         $this->load->library('pagination');
         $this->load->library('form_validation');
@@ -31,7 +31,7 @@ class News extends CI_Controller {
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
         $this->load->model('news_model');
-        $data['news'] = $this->news_model->get_news_admin($page_number, $config['per_page']);
+        $data['news'] = $this->news_model->get_news_admin($offset, $config['per_page']);
         $data['title'] = 'News list';
 
         $this->template->load('admin', 'admin/news/index', $data);
