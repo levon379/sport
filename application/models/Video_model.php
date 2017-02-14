@@ -18,14 +18,14 @@ class Video_model extends CI_Model {
         return $query->row();
     }
 /////////////////////////admin/////////////////////////////
-    function get_video_admin($page_number, $per_page = null) {
+    function get_video_admin($offset, $per_page = null) {
 
 
-        $page_number = $page_number-1;
-        if ($page_number<0) {
-            $page_number = 0;
+        $offset = (int) $offset;
+        if ($offset < 0) {
+            $offset = 0;
         }
-        $from = $page_number*$per_page;
+        $from = $offset;
         $this->db->order_by("id", "desc");
         $this->db->limit($per_page, $from);
         $query = $this->db->get("video");

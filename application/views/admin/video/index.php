@@ -1,7 +1,7 @@
 
     <h1>Video <a href = "<?=base_url().'/admin/video/create_video';?>" class="btn btn-primary btn-xs" >
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              <a/>
+              </a>
     </h1>
     <table class="table table-bordered table-striped table-hover" >
         <thead>
@@ -19,13 +19,13 @@
                             <td >
                                 <a  title="View Video" class="btn btn-success btn-xs"  href="<?= base_url().'admin/video/admin_video_show/'.$items['id']; ?>">
                                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
-                                <a/>
+                                </a>
                                 <a title="Edit Video" class="btn btn-primary btn-xs" href="<?= base_url().'admin/video/edit_video/'.$items['id']; ?>">
                                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
-                                <a/>
+                                </a>
                                 <a title="Delete Video" class="btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="<?= base_url().'admin/video/delete_video/'. $items['id']; ?>">
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                <a/>
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

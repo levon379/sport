@@ -21,13 +21,13 @@
                         <td width="100">
                             <a title="View News" class="btn btn-success btn-xs" href="<?= base_url().'admin/news/admin_news_show/'.$items['id']; ?>">
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
-                            <a/>
+                            </a>
                             <a  title="Edit News" class="edit_news btn btn-primary btn-xs" href="<?= base_url().'admin/news/edit_news/'. $items['id']; ?>">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
-                            <a/>
+                            </a>
                             <a title="Delete News" class="delete_news btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="<?= base_url().'admin/news/delete_news/'. $items['id']; ?>">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete Role"></span>
-                            <a/>
+                            </a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

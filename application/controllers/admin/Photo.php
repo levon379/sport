@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Photo extends CI_Controller {
 
-    public function index($page_number = null) {
+    public function index($offset = 0) {
 
         //////////pagiantion
         $this->load->library('pagination');
@@ -31,7 +31,7 @@ class Photo extends CI_Controller {
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
         $this->load->model('photo_model');
-        $data['photo'] = $this->photo_model->get_photo_admin($page_number, $config['per_page']);
+        $data['photo'] = $this->photo_model->get_photo_admin($offset, $config['per_page']);
         $data['title'] = 'Photo list';
 
         $this->template->load('admin', 'admin/photo/index', $data);
