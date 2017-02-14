@@ -13,8 +13,7 @@ class User_model extends CI_Model {
                     foreach ($val->result_array() as $recs => $res) {
                         $this->session->set_userdata(array(
                             'id' => $res['id'],
-                            'username' => $res['username'],
-                            'email' => $res['email'],                            
+                            'email' => $res['email'],
                             'is_client_login' => true
                                 )
                         );
