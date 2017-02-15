@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2017 at 10:47 AM
+-- Generation Time: Feb 15, 2017 at 07:34 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -31,19 +31,17 @@ CREATE TABLE `news` (
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `file_name` varchar(255) NOT NULL,
-  `created_date` varchar(255) NOT NULL
+  `date_created` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `title`, `description`, `file_name`, `created_date`) VALUES
-(14, 'fvfv1111111', 'fvdfsvf111111111', '', '11.02.17'),
-(15, 'mghmghm', 'ghmghmhg', 'MyTaskController.php', '11.02.17'),
-(16, 'fhnfh', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', 'tasklaravel.sql', '11.02.17'),
-(17, 'ghnhgn', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', 'TaskController.php', '11.02.17'),
-(18, 'tyjtyj', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', 'logo4.png', '11.02.17');
+INSERT INTO `news` (`id`, `title`, `description`, `file_name`, `date_created`) VALUES
+(16, 'fhnfh', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', 'logo.png', '2011-02-16 20:00:00'),
+(17, 'ghnhgn', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', 'logo.png', '2011-02-16 20:00:00'),
+(18, 'tyjtyj', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', 'logo.png', '2011-02-16 20:00:00');
 
 -- --------------------------------------------------------
 
@@ -53,18 +51,17 @@ INSERT INTO `news` (`id`, `title`, `description`, `file_name`, `created_date`) V
 
 CREATE TABLE `photo` (
   `id` int(11) NOT NULL,
-  `file_name` varchar(255) NOT NULL
+  `file_name` varchar(255) NOT NULL,
+  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `photo`
 --
 
-INSERT INTO `photo` (`id`, `file_name`) VALUES
-(7, 'logo1.png'),
-(8, 'logo3.png'),
-(10, '632_'),
-(11, '839_');
+INSERT INTO `photo` (`id`, `file_name`, `date_created`) VALUES
+(9, '7b89e28050048fbb3de9f5ade860dc80.PNG', '2017-02-15 14:16:45'),
+(10, '79a1015aa9202626e2ae6211f1a7916b.PNG', '2017-02-15 14:16:45');
 
 -- --------------------------------------------------------
 
@@ -114,15 +111,17 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 
 CREATE TABLE `video` (
   `id` int(11) NOT NULL,
-  `url` varchar(255) NOT NULL
+  `url` varchar(255) NOT NULL,
+  `date_created` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `video`
 --
 
-INSERT INTO `video` (`id`, `url`) VALUES
-(2, 'https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1');
+INSERT INTO `video` (`id`, `url`, `date_created`) VALUES
+(3, 'https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=2', '2017-02-15 14:17:46'),
+(4, 'https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=34', '2017-02-15 14:17:46');
 
 --
 -- Indexes for dumped tables
@@ -171,7 +170,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `photo`
 --
 ALTER TABLE `photo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `school`
 --
@@ -186,7 +185,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
