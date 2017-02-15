@@ -44,7 +44,11 @@ class Photo_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->delete('photo');
     }
+    public function get_photo_video(){
 
+        $query = $this->db->query("SELECT file_name AS src, date_created,'photo' AS `type` FROM `photo` UNION SELECT `url` AS src, date_created,'video' AS `type` FROM `video` ORDER BY `date_created` DESC LIMIT 4");
+        return $query->result_array();
+    }
 
 }
 

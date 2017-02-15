@@ -7,7 +7,7 @@
                     <th>Photo</th>
                     <th>Title</th>
                     <th>Description</th>
-                    <th>Created_date</th>
+                    <th>Date_created</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -17,7 +17,7 @@
                         <td ><img src="<?= base_url(). 'public/uploads/news/'. $items['file_name']; ?>" vidth="50" height="50"/></td>
                         <td class="title" ><?= $items['title']; ?></td>
                         <td scope="row"><?= $items['description']; ?></td>
-                        <td scope="row"><?= $items['created_date']; ?></td>
+                        <td scope="row"><?= $items['date_created']; ?></td>
                         <td width="100">
                             <a title="View News" class="btn btn-success btn-xs" href="<?= base_url().'admin/news/admin_news_show/'.$items['id']; ?>">
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>

@@ -28,6 +28,7 @@ class Welcome extends CI_Controller {
 
 		$this->load->model('Photo_model');
 		$data['photo'] = $this->Photo_model->get_photo();
+		$data['photo_video'] = $this->Photo_model->get_photo_video();
 
 		$this->load->view('welcome_message', $data);
 	}
@@ -79,5 +80,6 @@ class Welcome extends CI_Controller {
 		$data['title'] = 'News';
 		$this->template->load('default', 'news_show', $data);
 	}
+
 
 }

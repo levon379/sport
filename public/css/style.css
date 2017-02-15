@@ -77,11 +77,12 @@
 }
 .video-cover{
 
-    height:330px;
-    background-color:white
+   margin-top:-25px;
 }
 .video-bottom-border{
+    height:290px;
     border-bottom:2px solid #B21919;
+    margin-top: 2%;
 }
 .title-video{
     color:rgb(91, 10, 10);
@@ -184,4 +185,22 @@
 .carousel-inner > .item > a > img {
     width: 70%;
     margin: auto;
+}
+.carousel-inner{
+    width:95%;
+}
+.carousel-arrow{
+    height:100%;
+    float:left;
+}
+.carousel-arrow-left{
+    width:25px;
+    height:25px;
+    background-color:red;
+}
+.carousel-arrow-right{
+    width:25px;
+    height:25px;
+    background-color:yellow;
+
 }

@@ -81,7 +81,7 @@ class News extends CI_Controller {
         } else {
             $data['title'] = $this->input->post('title');
             $data['description'] = $this->input->post('description');
-            $data['created_date'] = date('d.m.y');
+
 
 
             $is_uploaded = $this->upload->do_upload('file_name');
