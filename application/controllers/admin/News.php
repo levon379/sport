@@ -125,8 +125,10 @@ class News extends CI_Controller {
             if ($is_uploaded) {
                 $image_data = $this->upload->data();
                 $data['file_name'] = $image_data['file_name'];
-
+                $id = $this->input->post('id');
                 $this->load->model('news_model');
+                $news = $this->news_model->get_news_by_id($id);
+                unlink(APPPATH.'/../public/uploads/news/' . $news->file_name);
                 $this->news_model->edit_news($data);
 
                 $this->session->set_flashdata('success', 'Information edited');
@@ -134,7 +136,7 @@ class News extends CI_Controller {
             } else {
                 $this->load->model('news_model');
                 $this->news_model->edit_news($data);
-                $this->session->set_flashdata('error_message', $this->upload->display_errors());
+
                 $this->session->set_flashdata('success', 'Information edited, image unchaged');
                 redirect('/admin/news/', 'location');
             }

@@ -119,11 +119,13 @@ class Photo extends CI_Controller {
                     $this->form_validation->set_rules('file_name', 'Image', 'required');
                 }
 
-
+                $id = $this->input->post('id');
                 $image_data = $this->upload->data();
                 $data['file_name'] = $image_data['file_name'];
 
                 $this->load->model('photo_model');
+                $photo = $this->photo_model->get_photo_by_id($id);
+                unlink(APPPATH.'/../public/uploads/photo/' . $photo->file_name);
                 $this->photo_model->edit_photo($data);
 
                 $this->session->set_flashdata('success', 'Information edited');
