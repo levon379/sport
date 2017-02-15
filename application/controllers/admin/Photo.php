@@ -10,7 +10,7 @@ class Photo extends CI_Controller {
         $this->load->library('form_validation');
         $config['base_url'] = base_url() . 'admin/photo/index';
         $config['total_rows'] = $this->db->count_all('photo');
-        $config['per_page'] = 1;
+        $config['per_page'] = 3;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_link'] = false;
@@ -69,13 +69,13 @@ class Photo extends CI_Controller {
             $this->form_validation->set_rules('file_name', 'Image', 'required');
         }
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-
-            $this->session->set_flashdata('error_message', 'try again');
-            $data['title'] = 'Photo Create';
-            $this->template->load('admin', 'admin/photo/create',$data);
-        } else {
+//        if ($this->form_validation->run() == FALSE) {
+//            $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+//
+//            $this->session->set_flashdata('error_message', 'try again');
+//            $data['title'] = 'Photo Create';
+//            $this->template->load('admin', 'admin/photo/create',$data);
+//        } else {
 
             $is_uploaded = $this->upload->do_upload('file_name');
             if ($is_uploaded) {
@@ -87,10 +87,15 @@ class Photo extends CI_Controller {
                 $this->session->set_flashdata('success', 'Information created');
                 redirect('/admin/photo', 'location');
             } else {
+                $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
                 $this->session->set_flashdata('error_message', $this->upload->display_errors());
+
+//                $this->session->set_flashdata('error_message', 'try again');
+                $data['title'] = 'Photo Create';
+                $this->template->load('admin', 'admin/photo/create',$data);
             }
 
-        }
+//        }
     }
 
 
@@ -103,10 +108,10 @@ class Photo extends CI_Controller {
         $config['max_size'] = '1000';
         $config['encrypt_name'] = true;
         $this->load->library('upload', $config);
-        if ($this->form_validation->run() == FALSE) {
-            $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-            redirect('/admin/photo', 'location');
-        }
+//        if ($this->form_validation->run() == FALSE) {
+//            $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+//            redirect('/admin/photo', 'location');
+//        }
         $is_uploaded = $this->upload->do_upload('file_name');
             if ($is_uploaded) {
 
@@ -124,10 +129,10 @@ class Photo extends CI_Controller {
                 $this->session->set_flashdata('success', 'Information edited');
                 redirect('/admin/photo/', 'location');
             } else {
-                $this->load->model('photo_model');
-                $this->photo_model->edit_photo($data);
+               // $this->load->model('photo_model');
+                $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 
-                $this->session->set_flashdata('success', 'Image chagned');
+                $this->session->set_flashdata('error_message', 'Image unchaged');
                 redirect('/admin/photo/', 'location');
             }
 

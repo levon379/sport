@@ -95,6 +95,7 @@ class News extends CI_Controller {
                 redirect('/admin/news', 'location');
             } else {
                 $this->session->set_flashdata('error_message', $this->upload->display_errors());
+                $this->template->load('admin', 'admin/news/create');
             }
 
         }
@@ -133,8 +134,8 @@ class News extends CI_Controller {
             } else {
                 $this->load->model('news_model');
                 $this->news_model->edit_news($data);
-
-                $this->session->set_flashdata('success', 'Information edited, image unchagned');
+                $this->session->set_flashdata('error_message', $this->upload->display_errors());
+                $this->session->set_flashdata('success', 'Information edited, image unchaged');
                 redirect('/admin/news/', 'location');
             }
         }
