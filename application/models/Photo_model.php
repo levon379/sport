@@ -44,12 +44,24 @@ class Photo_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->delete('photo');
     }
-    public function get_photo_video(){
-
+    public function get_home_slider_data()
+    {
         $query = $this->db->query("SELECT file_name AS src, date_created,'photo' AS `type` FROM `photo` UNION SELECT `url` AS src, date_created,'video' AS `type` FROM `video` ORDER BY `date_created` DESC LIMIT 4");
-        return $query->result_array();
+        $data = $query->result_array();
+        $response = array();
+        foreach ($data as $item) {
+            if ($item['type'] == 'photo') {
+                $response[] = $item;
+            } else {
+                $url = $item['src'];
+                if (!preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
+                    continue;
+                }
+                $video_id = $match[1];
+                $item['src'] = "https://www.youtube.com/embed/{$video_id}?rel=0&showinfo=0&color=white&iv_load_policy=3";
+                $response[] = $item;
+            }
+        }
+        return $response;
     }
-
 }
-
-?>

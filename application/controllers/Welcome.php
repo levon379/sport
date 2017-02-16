@@ -28,7 +28,7 @@ class Welcome extends CI_Controller {
 
 		$this->load->model('Photo_model');
 		$data['photo'] = $this->Photo_model->get_photo();
-		$data['photo_video'] = $this->Photo_model->get_photo_video();
+		$data['slider_data'] = $this->Photo_model->get_home_slider_data();
 
 		$this->load->view('welcome_message', $data);
 	}
