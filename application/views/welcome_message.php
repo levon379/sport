@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="<?= base_url() . 'public/bootstrap/css/bootstrap.min.css'; ?>">
     <link rel="stylesheet" href="<?= base_url() . 'public/css/style.css'; ?>">
+    <link rel="stylesheet" href="<?= base_url() . 'public/css/image_galery.css'; ?>">
     <meta charset="utf-8">
     <title>Davit Fahradyan Page</title>
 
@@ -161,26 +162,91 @@
 <h1 class="text-center">PHOTO GALERY</h1>
 <div class="row cover-photo">
     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                <img src="<?= base_url() . 'public/img/records.png'; ?>" height="200" width="100%">
-            </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                <img src="<?= base_url() . 'public/img/records.png'; ?>" height="200" width="100%">
+
+        <div class="col-md-4 col-sm-4 co-xs-4 gal-item">
+            <div class="box">
+                <a href="#" data-toggle="modal" data-target="#2">
+                    <img src="<?= base_url() . 'public/img/records.png'; ?>" >
+                </a>
+                <div class="modal fade" id="2" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <div class="modal-body">
+                                <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 "></div>
-    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <img src="<?= base_url() . 'public/img/records.png'; ?>" height="220" width="100%">
+
+        <div class="col-md-8 col-sm-8 co-xs-8 gal-item">
+            <div class="box">
+                <a href="#" data-toggle="modal" data-target="#1">
+                    <img src="<?= base_url() . 'public/img/records.png'; ?>" >
+                </a>
+                <div class="modal fade" id="1" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <div class="modal-body">
+                                <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <img src="<?= base_url() . 'public/img/records.png'; ?>" height="220" width="99%">
+        </div>
+        <div class="col-md-4 col-sm-6 co-xs-3 gal-item">
+            <div class="box">
+                <a href="#" data-toggle="modal" data-target="#3">
+                    <img src="<?= base_url() . 'public/img/records.png'; ?>" >
+                </a>
+                <div class="modal fade" id="3" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <div class="modal-body">
+                                <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <img src="<?= base_url() . 'public/img/records.png'; ?>" height="220" width="100%">
+        </div>
+        <div class="col-md-4 col-sm-6 co-xs-3 gal-item">
+            <div class="box">
+                <a href="#" data-toggle="modal" data-target="#4">
+                    <img src="<?= base_url() . 'public/img/records.png'; ?>" >
+                </a>
+                <div class="modal fade" id="4" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <div class="modal-body">
+                                <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 co-xs-3 gal-item">
+            <div class="box">
+                <a href="#" data-toggle="modal" data-target="#5">
+                    <img src="<?= base_url() . 'public/img/records.png'; ?>" >
+                </a>
+                <div class="modal fade" id="5" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <div class="modal-body">
+                                <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -205,7 +271,7 @@
                         <img src="<?= base_url() . 'public/uploads/news/' . $item['file_name']; ?>" width="60%"
                              height="40%" align="left"/>
                     <h1 class="title-our-news"><?= $item['title']; ?></h1>
-                    <h1 class="secondary-title-our-news"><?= $item['date_created']; ?></h1>
+                    <h1 class="secondary-title-our-news"><?=date("d.m.y", strtotime($item['date_created']));  ?></h1>
                     <span class="description-our-news">
                         <?= substr($item['description'], 0, 250); ?>...
                             </span>
@@ -240,5 +306,6 @@
 <script type="text/javascript" src="<?= base_url() . 'public/bootstrap/js/jquery-1.11.3.min.js'; ?>"></script>
 <script type="text/javascript" src="<?= base_url() . 'public/bootstrap/js/bootstrap.min.js'; ?>"></script>
 <script type="text/javascript" src="<?= base_url() . 'public/js/script.js'; ?>"></script>
+<script type="text/javascript" src="<?= base_url() . 'public/js/ekko-lightbox.js'; ?>"></script>
 </body>
 </html>
