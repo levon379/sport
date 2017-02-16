@@ -13,8 +13,8 @@
     <div class="row">
         <div class="cover col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
-                <div class=" col-lg-4 col-lg-offset-1  col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
-                        <img src="<?= base_url(). 'public/img/logo.jpg';?>" height="200" width="200"  alt="">
+                <div class=" col-lg-4 col-lg-offset-1  col-md-4 col-md-offset-1 col-sm-11 col-sm-offset-1 col-xs-11 col-xs-offset-1">
+                        <img src="<?= base_url(). 'public/img/logo.png';?>" height="200" width="200"  alt="">
                     <h2 class="welcome-title-head">WELCOME TO OUR</h2>
                     <h1 class="school-title-head">SCHOOL</h1>
                     <h2 class="fahradyan-title-head">DAVID FAHRADYAN</h2>
@@ -30,7 +30,7 @@
                         <!-- see more...</a>-->
 
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6  col-xs-6">
+                <div class="col-lg-6 col-md-6 col-sm-1  col-xs-1">
 <!--                    <img src="../public/img/dav_fah.png" height="500" width="400">-->
                 </div>
             </div>
@@ -132,14 +132,20 @@
                             <div class="item active">
                                 <img src="<?= base_url(). 'public/uploads/photo/'.$item['src'];?>" alt="" width="460" height="270">
                             </div>
-                             <?php   } else{ ?>
+                             <?php   } else{
+                                 $url = $item['src'];
+                                 preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
+                                 $id = $matches[1];
+                                 $width = '460px';
+                                 $height = '270px';
+                                 ?>
                             <div class="item">
-                                <iframe width="460" height="270" src="<?=$item['src']; ?>" >
-                                </iframe>
+                            <iframe id="ytplayer" type="text/html" width="<?php echo $width ?>" height="<?php echo $height ?>"
+                                src="https://www.youtube.com/embed/<?php echo $id ?>?rel=0&showinfo=0&color=white&iv_load_policy=3"
+                                frameborder="0" allowfullscreen>
+                            </iframe>
                             </div>
-                             <?php   } ?>
-
-                         <?php   } ?>
+                             <?php  } } ?>
                         </div>
 
                         <!-- Left and right controls -->
@@ -241,10 +247,5 @@
 <script type="text/javascript" src="<?= base_url().'public/bootstrap/js/jquery-1.11.3.min.js';?>"></script>
 <script type="text/javascript" src="<?= base_url().'public/bootstrap/js/bootstrap.min.js';?>"></script>
 <script type="text/javascript" src="<?= base_url().'public/js/script.js';?>"></script>
-<script>
-    jQuery(document).ready(function($) {
-        $('.my-slider').unslider();
-    });
-</script>
 </body>
 </html>
