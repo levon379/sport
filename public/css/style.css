@@ -181,11 +181,9 @@
 .right{
     float:right
 }
-/*.carousel-inner > .item > img,*/
-/*.carousel-inner > .item > a > img {*/
-    /*width: 70%;*/
-    /*margin: auto;*/
-/*}*/
+.carousel-inner > .item > img {
+    max-height: 270px;
+}
 
 #myCarousel {
     margin-left: 50px;

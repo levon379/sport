@@ -131,7 +131,7 @@
                                     if ($item['type'] == 'photo') { ?>
                                         <div class="item <?= $first ? 'active' : '' ?>">
                                             <img src="<?= base_url() . 'public/uploads/photo/' . $url; ?>" alt=""
-                                                 width="460" height="270">
+                                                 width="100%" height="270">
                                         </div>
                                     <?php } else { ?>
                                         <div class="item <?= $first ? 'active' : '' ?>">
