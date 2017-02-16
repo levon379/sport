@@ -190,17 +190,17 @@
     width:95%;
 }
 .carousel-arrow{
-    width:60px;
+    width:50px;
 
     float:left;
 }
 .carousel-arrow-left{
-    width:50px;
+    width:90%;
     height:50px;
     background-image: url("../img/left-arrow.png") !important;
 }
 .carousel-arrow-right{
-    width:50px;
+    width:90%;
     height:50px;
     background-image: url("../img/right-arrow.png") !important;
 

@@ -41,36 +41,36 @@
         <div class="row about-cover-div">
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <img src="<?= base_url(). 'public/img/'.$school[0]['image']; ?>" height="180" width="100%" class="about-img">
 
                         <h1 class="about-title"><?=$school[0]['title']; ?></h1>
                         <p class="about-description">
-                            <?=$school[0]['description']; ?>
+                            <?=substr($school[0]['description'], 0, 250);?>...
                         </p>
                         <a href="<?php echo site_url('welcome/school') ?>" class="btn about-button">see more...</a>
 
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <img src="<?= base_url(). 'public/img/bio.png';?>" height="180" width="100%" class="about-img">
                         <h1 class="about-title">BIOGRAPHY</h1>
                         <p class="about-description">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
                             Lorem Ipsum has been
                         </p>
                         <a href="" class="btn about-button">see more...</a>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <img src="<?= base_url(). 'public/img/records.png';?>" height="180" width="100%" class="about-img">
                         <h1 class="about-title">RECORDS</h1>
                         <p class="about-description">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
                             Lorem Ipsum has been
                         </p>
                         <a href="" class="btn about-button">see more...</a>
@@ -172,24 +172,24 @@
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                    <img src="../public/img/records.png" height="200" width="100%">
+                    <img src="<?= base_url().'public/img/records.png';?>" height="200" width="100%">
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                    <img src="../public/img/records.png" height="200" width="100%">
+                    <img src="<?= base_url().'public/img/records.png';?>" height="200" width="100%">
                 </div>
             </div>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 "></div>
         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <img src="../public/img/records.png" height="220" width="">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <img src="<?= base_url().'public/img/records.png';?>" height="220" width="100%">
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <img src="../public/img/records.png" height="220" width="">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <img src="<?= base_url().'public/img/records.png';?>" height="220" width="99%">
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <img src="../public/img/records.png" height="220" width="">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <img src="<?= base_url().'public/img/records.png';?>" height="220" width="100%">
                 </div>
             </div>
         </div>
@@ -209,13 +209,13 @@
                 <?php
 
                 foreach($news as $item){ ?>
-                <div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
                     <p>
-                        <img src="<?= base_url(). 'public/img/'.$item['file_name']; ?>" width="60%" height="40%" align="left"/>
+                        <img src="<?= base_url(). 'public/uploads/news/'.$item['file_name']; ?>" width="60%" height="40%" align="left"/>
                     <h1 class="title-our-news"><?=$item['title']; ?></h1>
                     <h1 class="secondary-title-our-news"><?=$item['date_created']; ?></h1>
                             <span class="description-our-news">
-                        <?=substr($item['description'], 0, 300);?>
+                        <?=substr($item['description'], 0, 250);?>...
                             </span>
                     </p>
                     <div class="clear"></div>
