@@ -35,13 +35,13 @@ class Video extends CI_Controller {
         //var_dump($this->uri->segment(3));die;
         $this->pagination->initialize($config);
         $this->load->model('video_model');
-        $data['video'] = $this->video_model->get_video_admin($page_number, $config['per_page']);
+        $data['video'] = $this->video_model->get_url($page_number, $config['per_page']);
         $data['title'] = 'Video list';
 
         $this->template->load('admin', 'admin/video/index', $data);
     }
 
-    public function admin_video_show($id) {
+    public function video_show($id) {
         $this->load->model('video_model');
         $data['video_show'] = $this->video_model->get_video_by_id($id);
         $data['title'] = 'Video Show';

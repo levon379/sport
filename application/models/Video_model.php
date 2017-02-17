@@ -36,7 +36,7 @@ class Video_model extends CI_Model {
         return $response;
     }
 /////////////////////////admin/////////////////////////////
-    function get_video_admin($offset, $per_page = null) {
+    function  get_url($offset, $per_page = null) {
 
 
         $offset = (int) $offset;

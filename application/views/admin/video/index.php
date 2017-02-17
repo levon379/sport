@@ -17,7 +17,7 @@
 
                             <td scope="row"><?= $items['url']; ?></td>
                             <td >
-                                <a  title="View Video" class="btn btn-success btn-xs"  href="<?= base_url().'admin/video/admin_video_show/'.$items['id']; ?>">
+                                <a  title="View Video" class="btn btn-success btn-xs"  href="<?= base_url().'admin/video/video_show/'.$items['id']; ?>">
                                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
                                 </a>
                                 <a title="Edit Video" class="btn btn-primary btn-xs" href="<?= base_url().'admin/video/edit_video/'.$items['id']; ?>">
