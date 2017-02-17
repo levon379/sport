@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2017 at 07:34 PM
+-- Generation Time: Feb 17, 2017 at 12:26 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -31,7 +31,7 @@ CREATE TABLE `news` (
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `file_name` varchar(255) NOT NULL,
-  `date_created` timestamp NULL DEFAULT NULL
+  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -39,9 +39,10 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `description`, `file_name`, `date_created`) VALUES
-(16, 'fhnfh', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', 'logo.png', '2011-02-16 20:00:00'),
-(17, 'ghnhgn', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', 'logo.png', '2011-02-16 20:00:00'),
-(18, 'tyjtyj', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', 'logo.png', '2011-02-16 20:00:00');
+(17, 'NEWS NAME', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', '77594398e1a1b76e9a05be5d66ce363f.png', '2017-02-08 08:20:53'),
+(18, 'NEWS NAME', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', '91a583ceb298049d58485026f87cae67.png', '2017-02-17 08:20:47'),
+(19, 'NEWS NAME', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simp Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simp', 'ae15fe5f6e6dc50f1960f7ddbdfd0b47.png', '2017-02-17 08:20:39'),
+(20, 'news 4 news', 'efwefw', 'f5b853c8951f23ed59932724d95a3324.png', '2017-02-17 11:15:47');
 
 -- --------------------------------------------------------
 
@@ -60,8 +61,9 @@ CREATE TABLE `photo` (
 --
 
 INSERT INTO `photo` (`id`, `file_name`, `date_created`) VALUES
-(9, '7b89e28050048fbb3de9f5ade860dc80.PNG', '2017-02-15 14:16:45'),
-(10, '79a1015aa9202626e2ae6211f1a7916b.PNG', '2017-02-15 14:16:45');
+(9, 'def096229bbb10c7f978223fc40ff72a.png', '2017-02-15 14:16:45'),
+(10, '060ddc36b79fd9bfe4ec449dddb35537.png', '2017-02-15 14:16:45'),
+(11, '8e042003af20ead572470be3ea2dca16.png', '2017-02-17 09:40:51');
 
 -- --------------------------------------------------------
 
@@ -82,7 +84,7 @@ CREATE TABLE `school` (
 --
 
 INSERT INTO `school` (`id`, `title`, `description`, `image`, `created_date`) VALUES
-(1, 'SCHOOL', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been', 'school.png', '');
+(1, 'SCHOOL', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been', 'school.png', '');
 
 -- --------------------------------------------------------
 
@@ -112,7 +114,7 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 CREATE TABLE `video` (
   `id` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
-  `date_created` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -120,8 +122,8 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`id`, `url`, `date_created`) VALUES
-(3, 'https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=2', '2017-02-15 14:17:46'),
-(4, 'https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=34', '2017-02-15 14:17:46');
+(3, 'https://www.youtube.com/watch?v=XatXy6ZhKZw', '2017-02-15 14:17:46'),
+(4, 'https://www.youtube.com/watch?v=u9-kU7gfuFA', '2017-02-15 14:17:46');
 
 --
 -- Indexes for dumped tables
@@ -165,12 +167,12 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `photo`
 --
 ALTER TABLE `photo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `school`
 --

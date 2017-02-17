@@ -32,7 +32,6 @@ class Video extends CI_Controller {
         $config['cur_tag_close'] = '</a></li>';
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
-        //var_dump($this->uri->segment(3));die;
         $this->pagination->initialize($config);
         $this->load->model('video_model');
         $data['video'] = $this->video_model->get_url($page_number, $config['per_page']);
@@ -103,15 +102,6 @@ class Video extends CI_Controller {
     }
 
     public function delete_video($id) {
-//        $this->load->model('video_model');
-//        $video = $this->video_model->get_video_by_id($id);
-//        unlink(APPPATH.'/../public/uploads/video/' . $video->file_name);
-//        $this->video_model->delete_video($id);
-//        $this->load->library('session');
-//        $this->session->set_flashdata('success', 'Information deleted');
-//        redirect('/admin/video/', 'location');
-
-
         $this->load->model('video_model');
         $this->video_model->delete_video($id);
         $this->load->library('session');
