@@ -1,6 +1,10 @@
 
 .cover {
-    background-image: url("../img/head.png") !important;
+    background: url("../img/head.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height:650px !important;
 }
 .about-cover {
@@ -8,8 +12,11 @@
     height:350px;
 }
 .grad {
-    height:410px;
-    background-image: url("../img/ournews.png") !important;
+    background: url("../img/ournews.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .welcome-title-head{
     color:rgb(178, 25, 25);
@@ -75,19 +82,15 @@
     color:#272727;
     border-radius:0px !important;
 }
-.video-cover{
-
-   margin-top:-25px;
-}
 .video-bottom-border{
-    height:290px;
     border-bottom:2px solid #B21919;
-    margin-top: 2%;
+    padding-bottom: 8px;
 }
 .title-video{
     color:rgb(91, 10, 10);
     font-weight: bold;
     font-size:300%;
+    margin-top: 0px;
 }
 .secondary-title-video{
     font-weight: bold;
@@ -107,8 +110,7 @@
     clear:both
 }
 .cover-photo{
-    height:460px;
-    background-color:white
+    background-color:white;
 }
 .title-head-our-news{
     font-weight: bold;
@@ -163,6 +165,9 @@
 }
 .by-Astudio-panel{
     margin-top:10px;
+}
+
+.school-bio-records-image-container {
 }
 .about-img{
     border-top: 3px solid rgb(178, 25, 25) !important;
@@ -228,3 +233,7 @@ a, p, h2{text-decoration:none;}
 
 /*ournews*/
 .margin10{margin-bottom:10px; margin-right:10px;}
+
+.video-cover {
+    margin-bottom: 5px;
+}
