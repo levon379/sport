@@ -131,6 +131,9 @@
     margin-top: -7px;
     width:103%
 }
+.our_news_btn{
+    border-radius: 0px;
+}
 .secondary-title-our-news{
     color:rgb(198, 167, 41);
     font-size:150%;
