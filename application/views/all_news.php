@@ -13,8 +13,8 @@
 
                 <img src="<?= base_url(). 'public/uploads/news/'. $items['file_name']; ?>" vidth="50" height="50">
                 <div class="caption">
-                    <h3><a href="#"><?=$items['title']; ?></a></h3>
-                    <h6><a href="#"><?=date("d.m.y", strtotime($items['date_created'])) ?></a></h6>
+                    <h3><?=$items['title']; ?></h3>
+                    <h6><?=date("d.m.y", strtotime($items['date_created'])) ?></h6>
                     <p><?=substr($items['description'], 0, 300);?> ...</p>
 
                     <a href="<?= base_url().'welcome/get_news/'.$items['id']; ?>" class="btn btn-success">

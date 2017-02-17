@@ -267,18 +267,15 @@
 
             foreach ($news as $item) { ?>
                 <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                    <p>
-                        <img src="<?= base_url() . 'public/uploads/news/' . $item['file_name']; ?>" width="60%"
-                             height="40%" align="left"/>
-                    <h1 class="title-our-news"><?= $item['title']; ?></h1>
+                    <img src="<?= base_url() . 'public/uploads/news/' . $item['file_name']; ?>" width="60%" alt="post img" class="pull-left img-responsive margin10">
+                    <h1 class="title-our-news"><?=$item['title']; ?></h1>
                     <h1 class="secondary-title-our-news"><?=date("d.m.y", strtotime($item['date_created']));  ?></h1>
-                    <span class="description-our-news">
-                        <?= substr($item['description'], 0, 250); ?>...
-                            </span>
+                    <p class="description-our-news">
+                        <?= substr($item['description'], 0, 250); ?>
                     </p>
-                    <div class="clear"></div>
-                    <a href="<?= base_url() . 'welcome/get_news/' . $item['id']; ?>" class="button-our-news">View
-                        more</a>
+                    <p>
+                        <a href="<?= base_url() . 'welcome/get_news/' . $item['id']; ?>" class="button-our-news">View more</a>
+                    </p>
                 </div>
 
             <?php } ?>

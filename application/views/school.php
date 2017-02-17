@@ -1,40 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="../../public/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../public/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <script type="text/javascript" src="../../public/bootstrap/js/jquery-1.11.3.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <meta charset="utf-8">
-    <title>School</title>
 
 
-</head>
-<body>
-<div class="container-fluid">
 
-    <h1 class="text-center title-school-page"> <?=$school[0]['title']; ?></h1>
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-1 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
-            <img src="../../public/img/<?=$school[0]['image']; ?>"  class="img-school-page">
-        </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <div class="left-panel">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <img src="<?= base_url().'public/img/'.$school[0]['image']; ?>"width="100%" height="100%" alt=""/>
+                        </div>
+                        <div class="icerik-bilgi">
+                            <h2><?=$school[0]['title']; ?></h2>
+                            <p><?=$school[0]['description']; ?></p>
 
-    </div>
-    </div>
-    <div class="row description-school-page">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-1 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
-            <pre> <?=$school[0]['description']; ?>
-            </pre>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<script type="text/javascript" src="../../public/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
