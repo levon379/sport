@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2017 at 12:26 PM
+-- Generation Time: Feb 17, 2017 at 12:31 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -41,8 +41,7 @@ CREATE TABLE `news` (
 INSERT INTO `news` (`id`, `title`, `description`, `file_name`, `date_created`) VALUES
 (17, 'NEWS NAME', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', '77594398e1a1b76e9a05be5d66ce363f.png', '2017-02-08 08:20:53'),
 (18, 'NEWS NAME', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type', '91a583ceb298049d58485026f87cae67.png', '2017-02-17 08:20:47'),
-(19, 'NEWS NAME', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simp Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simp', 'ae15fe5f6e6dc50f1960f7ddbdfd0b47.png', '2017-02-17 08:20:39'),
-(20, 'news 4 news', 'efwefw', 'f5b853c8951f23ed59932724d95a3324.png', '2017-02-17 11:15:47');
+(19, 'NEWS NAME', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simp Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type Lorem Ipsum is simp', 'ae15fe5f6e6dc50f1960f7ddbdfd0b47.png', '2017-02-17 08:20:39');
 
 -- --------------------------------------------------------
 
