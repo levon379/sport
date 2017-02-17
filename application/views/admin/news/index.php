@@ -19,7 +19,7 @@
                         <td scope="row"><?= $items['description']; ?></td>
                         <td scope="row"><?= date("d.m.y", strtotime($items['date_created'])); ?></td>
                         <td width="100">
-                            <a title="View News" class="btn btn-success btn-xs" href="<?= base_url().'admin/news/admin_news_show/'.$items['id']; ?>">
+                            <a title="View News" class="btn btn-success btn-xs" href="<?= base_url().'admin/news/news_show/'.$items['id']; ?>">
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"/>
                             </a>
                             <a  title="Edit News" class="edit_news btn btn-primary btn-xs" href="<?= base_url().'admin/news/edit_news/'. $items['id']; ?>">

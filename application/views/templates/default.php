@@ -39,8 +39,8 @@
                     <li><a href="<?= base_url().'welcome/biography';?>">Bio</a></li>
                     <li><a href="<?= base_url().'welcome/records';?>">Records</a></li>
                     <li><a href="<?= base_url().'welcome/get_all_news/';?>">News</a></li>
-                    <li><a href="<?= base_url().'welcome/photo';?>">Photo</a></li>
-                    <li><a href="<?= base_url().'welcome/video';?>">Video</a></li>
+                    <li><a href="<?= base_url().'welcome/get_all_photo';?>">Photo</a></li>
+                    <li><a href="<?= base_url().'welcome/get_all_video';?>">Video</a></li>
                 </ul>
             </div>
         </div>

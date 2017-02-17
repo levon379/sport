@@ -4,13 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Video_model extends CI_Model {
 
-    function get_video() {
-
-        $this->db->limit('3');
-        $query = $this->db->order_by('id', 'desc');
-        $query = $this->db->get('video');
-        return $query->result_array();
-    }
 
     function get_video_by_id($id) {
         $this->db->where('id', $id);
@@ -30,18 +23,16 @@ class Video_model extends CI_Model {
         $data = $query->result_array();
         $response = array();
         foreach ($data as $item) {
-            if ($item['type'] == 'photo') {
-                $response[] = $item;
-            } else {
-                $url = $item['src'];
+
+                $url = $item['url'];
                 if (!preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
                     continue;
                 }
                 $video_id = $match[1];
-                $item['src'] = "https://www.youtube.com/embed/{$video_id}?rel=0&showinfo=0&color=white&iv_load_policy=3";
+                $item['url'] = "https://www.youtube.com/embed/{$video_id}?rel=0&showinfo=0&color=white&iv_load_policy=3";
                 $response[] = $item;
             }
-        }
+
         return $response;
     }
 /////////////////////////admin/////////////////////////////

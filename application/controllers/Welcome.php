@@ -68,10 +68,76 @@ class Welcome extends CI_Controller {
 		//var_dump($this->uri->segment(3));die;
 		$this->pagination->initialize($config);
 		$this->load->model('news_model');
-		$data['all_news'] = $this->news_model->get_news_admin($id, $config['per_page'], $this->uri->segment(3));
+		$data['all_news'] = $this->news_model->get_all_news($id, $config['per_page'], $this->uri->segment(3));
 
 		$data['title'] = 'Our News';
 		$this->template->load('default', 'all_news', $data);
+	}
+	public function get_all_video($id = null)
+	{
+		$this->load->library('pagination');
+		$this->load->library('form_validation');
+		$config['base_url'] = base_url() . 'index.php/welcome/get_all_video';
+		$config['total_rows'] = $this->db->count_all('video');
+		$config['per_page'] = 1;
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['full_tag_close'] = '</ul>';
+		$config['first_link'] = false;
+		$config['last_link'] = false;
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = '<li class="prev">';
+		$config['prev_tag_close'] = '</li>';
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		//var_dump($this->uri->segment(3));die;
+		$this->pagination->initialize($config);
+		$this->load->model('video_model');
+		$data['all_video'] = $this->video_model->get_all($id, $config['per_page'], $this->uri->segment(3));
+
+		$data['title'] = 'All Video';
+		$this->template->load('default', 'all_video', $data);
+	}
+	public function get_all_photo($id = null)
+	{
+		$this->load->library('pagination');
+		$this->load->library('form_validation');
+		$config['base_url'] = base_url() . 'index.php/welcome/get_all_photo';
+		$config['total_rows'] = $this->db->count_all('photo');
+		$config['per_page'] = 3;
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['full_tag_close'] = '</ul>';
+		$config['first_link'] = false;
+		$config['last_link'] = false;
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = '<li class="prev">';
+		$config['prev_tag_close'] = '</li>';
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		//var_dump($this->uri->segment(3));die;
+		$this->pagination->initialize($config);
+		$this->load->model('photo_model');
+		$data['all_photo'] = $this->photo_model->get_all($id, $config['per_page'], $this->uri->segment(3));
+
+		$data['title'] = 'Photo Galery';
+		$this->template->load('default', 'all_photo', $data);
 	}
 	public function get_news($id)
 	{

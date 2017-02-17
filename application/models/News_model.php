@@ -21,7 +21,7 @@ class News_model extends CI_Model
     }
 
 /////////////////////////admin/////////////////////////////
-    function get_news_admin($offset, $per_page = null)
+    function get_all_news($offset, $per_page = null)
     {
         $offset = (int) $offset;
         if ($offset < 0) {

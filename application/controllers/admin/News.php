@@ -31,13 +31,13 @@ class News extends CI_Controller {
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
         $this->load->model('news_model');
-        $data['news'] = $this->news_model->get_news_admin($offset, $config['per_page']);
+        $data['news'] = $this->news_model->get_all_news($offset, $config['per_page']);
         $data['title'] = 'News list';
 
         $this->template->load('admin', 'admin/news/index', $data);
     }
 
-    public function admin_news_show($id) {
+    public function news_show($id) {
         $this->load->model('news_model');
         $data['news_show'] = $this->news_model->get_news_by_id($id);
         $this->load->library('pagination');

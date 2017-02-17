@@ -6,7 +6,7 @@ class Photo_model extends CI_Model {
 
     function get_photo() {
 
-        $query = $this->db->limit('3');
+        $query = $this->db->limit('5');
         $query = $this->db->order_by('id', 'desc');
         $query = $this->db->get('photo');
         return $query->result_array();
@@ -18,7 +18,7 @@ class Photo_model extends CI_Model {
         return $query->row();
     }
 /////////////////////////admin/////////////////////////////
-    function get_photo_admin($offset, $per_page = null)
+    function get_all($offset, $per_page = null)
     {
         $offset = (int) $offset;
         if ($offset < 0) {

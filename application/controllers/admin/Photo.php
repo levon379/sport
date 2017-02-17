@@ -31,17 +31,13 @@ class Photo extends CI_Controller {
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
         $this->load->model('photo_model');
-        $data['photo'] = $this->photo_model->get_photo_admin($offset, $config['per_page']);
+        $data['photo'] = $this->photo_model->get_all($offset, $config['per_page']);
         $data['title'] = 'Photo list';
 
         $this->template->load('admin', 'admin/photo/index', $data);
     }
 
-    public function admin_photo_show($id) {
-        $this->load->model('photo_model');
-        $data['photo_show'] = $this->photo_model->get_photo_admin($id);
-        $this->load->view('admin/photo/show', $data);
-    }
+
     public function create_photo() {
         $this->load->library('form_validation');
         $data['title'] = 'Photo Create';
