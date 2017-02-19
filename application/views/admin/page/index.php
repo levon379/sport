@@ -1,10 +1,10 @@
-<h1>Page <a href="<?= base_url().'admin/page/create_page';?>" class="btn btn-primary btn-xs" title="Add New Page"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></h1>
+<h1>Page</h1>
 <?php echo validation_errors(); ?>
 <div class="table">
         <table class="table table-bordered table-striped table-hover" >
             <thead>
                 <tr>
-                    <th>Photo</th>
+                    <th>Image</th>
                     <th>Title</th>
                     <th>Description</th>
 
@@ -23,9 +23,6 @@
                             </a>
                             <a  title="Edit Page" class=" btn btn-primary btn-xs" href="<?= base_url().'admin/page/edit_page/'. $items['id']; ?>">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
-                            </a>
-                            <a title="Delete Page" class=" btn btn-danger btn-xs" data="<?= $items['id']; ?>" href="<?= base_url().'admin/page/delete_page/'. $items['id']; ?>">
-                                <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete Role"></span>
                             </a>
                         </td>
                     </tr>

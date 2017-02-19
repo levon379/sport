@@ -23,8 +23,9 @@ class Home extends CI_Controller {
 		$this->load->model('News_model');
 		$data['news'] = $this->News_model->get_news();
 
-		$this->load->model('Page_model');
-		$data['page'] = $this->Page_model->get_page();
+		$this->load->model('Content_model');
+		$data['page'] = $this->Content_model->get_page();
+		$data['about_us'] = $this->Content_model->get_about_us();
 
 		$this->load->model('Photo_model');
 		$data['photo'] = $this->Photo_model->get_photo();
@@ -32,7 +33,13 @@ class Home extends CI_Controller {
 
 		$this->load->view('home', $data);
 	}
-
+	public function get_page($id)
+	{
+		$this->load->model('Content_model');
+		$data['page_show'] = $this->Content_model->get_page_by_id($id);
+		$data['title'] = 'Page';
+		$this->template->load('default', 'page_show', $data);
+	}
 
 	public function get_all_news($id = null)
 	{
@@ -139,13 +146,6 @@ class Home extends CI_Controller {
 		$data['news_show'] = $this->news_model->get_news_by_id($id);
 		$data['title'] = 'News';
 		$this->template->load('default', 'news_show', $data);
-	}
-	public function get_page($id)
-	{
-		$this->load->model('page_model');
-		$data['page_show'] = $this->page_model->get_page_by_id($id);
-		$data['title'] = 'Page';
-		$this->template->load('default', 'page_show', $data);
 	}
 
 

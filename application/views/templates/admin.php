@@ -11,6 +11,26 @@ if(($this->session->userdata('is_client_login')==false))
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url().'public/bootstrap/css/bootstrap.min.css';?>">
     <link rel="stylesheet" href="<?= base_url().'public/css/style.css';?>">
+    <script type="text/javascript" src="<?= base_url().'public/tinymce/js/tinymce/tinymce.min.js';?>"></script>
+    <script>
+        tinymce.init({
+            selector: '#page_textarea',
+            height: 300,
+            menubar: false,
+            plugins: [
+                'advlist autolink lists link  charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime  table contextmenu paste code textcolor'
+            ],
+            toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor ',
+            textcolor_map: [
+                "000000", "Black",
+                "FFFFFF", "White"
+            ],
+            content_css: '//www.tinymce.com/css/codepen.min.css'
+        });
+
+    </script>
     <meta charset="utf-8">
     <title><?= isset($title) ? $title : 'Admin area' ?></title>
     <style>
@@ -80,6 +100,8 @@ if(($this->session->userdata('is_client_login')==false))
 
     <script type="text/javascript" src="<?= base_url().'public/bootstrap/js/jquery-1.11.3.min.js';?>"></script>
     <script type="text/javascript" src="<?= base_url().'public/bootstrap/js/bootstrap.min.js';?>"></script>
+    <script type="text/javascript" src="<?= base_url().'public/js/tiny_mce/tiny_mce.js';?>"></script>
+    <script type="text/javascript" src="<?= base_url().'public/js/tiny_mce/tinymce_properties.js';?>"></script>
     <script type="text/javascript" src="<?= base_url().'public/js/script.js';?>"></script>
 </body>
 </html>

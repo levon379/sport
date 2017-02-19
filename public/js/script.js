@@ -15,10 +15,10 @@ $( document ).ready(function() {
     }).parent().addClass('active');
 
     //image
-    $( ".image_size" ).find('.gal-item:eq( 0 )').addClass('col-md-4 col-sm-4 co-xs-4 gal-item');
-    $( ".image_size" ).find('.gal-item:eq( 1 )').addClass('col-md-8 col-sm-8 co-xs-8 gal-item');
-    $( ".image_size" ).find('.gal-item:eq( 2 )').addClass('col-md-4 col-sm-6 co-xs-3 gal-item');
-    $( ".image_size" ).find('.gal-item:eq( 3 )').addClass('col-md-4 col-sm-6 co-xs-3 gal-item');
-    $( ".image_size" ).find('.gal-item:eq( 4 )').addClass('col-md-4 col-sm-6 co-xs-3 gal-item');
+    //$( ".image_size" ).find('.gal-item:eq( 0 )').addClass('col-md-4 col-sm-4 co-xs-4 gal-item');
+    //$( ".image_size" ).find('.gal-item:eq( 1 )').addClass('col-md-8 col-sm-8 co-xs-8 gal-item');
+    //$( ".image_size" ).find('.gal-item:eq( 2 )').addClass('col-md-4 col-sm-6 co-xs-3 gal-item');
+    //$( ".image_size" ).find('.gal-item:eq( 3 )').addClass('col-md-4 col-sm-6 co-xs-3 gal-item');
+    //$( ".image_size" ).find('.gal-item:eq( 4 )').addClass('col-md-4 col-sm-6 co-xs-3 gal-item');
 
 });

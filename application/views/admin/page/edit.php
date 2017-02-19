@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <label for="description" class="col-sm-3 control-label">Description:</label>
                     <div class="col-sm-6">
-                        <textarea class="form-control" cols="50" rows="10"  name="description"><?=$page_show->description; ?></textarea>
+                        <textarea class="form-control" cols="50" id="page_textarea" rows="10"  name="description"><?=$page_show->description; ?></textarea>
                     </div>
                 </div>
                 <div class="form-group">

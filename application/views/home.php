@@ -15,17 +15,14 @@
             <div class="cover col-lg-12 col-md-12 ">
                 <div class="row">
                     <div class=" col-lg-4 col-lg-offset-1  col-md-4 col-md-offset-1  ">
-                        <img src="<?= base_url() . 'public/img/logo.png'; ?>" height="200" width="200" alt="">
+                        <img src="<?= base_url() . 'public/uploads/page/' . $about_us->file_name; ?>" height="200" width="200" alt="">
                         <h2 class="welcome-title-head">WELCOME TO OUR</h2>
                         <h1 class="school-title-head">SCHOOL</h1>
-                        <h2 class="fahradyan-title-head">DAVID FAHRADYAN</h2>
+                        <h2 class="fahradyan-title-head"> <?= $about_us->title ; ?></h2>
                         <p class="description-head">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of
-                            type and scrambled it to make a type
+                            <?= substr($about_us->description, 0, 220); ?>...
                         </p>
-                        <a href="" class="btn button-head">see more...</a>
+                        <a href="<?=base_url() .'home/get_page/'. $about_us->id; ?>" class="btn button-head">see more...</a>
 
                         <!-- <a href="" class="btn" style="width:100%;font-size:128%;background: rgb(198, 167, 41);color:white;border-radius:0px;">-->
                         <!-- see more...</a>-->
@@ -138,9 +135,9 @@
         </div>
 
         <div class="row cover-photo">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 image_size">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 "><!--image_size--->
                 <?php   foreach ($photo as $item) : ?>
-                    <div class="gal-item">
+                    <div class="gal-item col-md-4 col-sm-6 co-xs-3 gal-item">
                         <div class="box">
                             <a href="#" data-toggle="modal" data-target="#<?=$item['id']; ?>">
                                 <img src="<?= base_url() . 'public/uploads/photo/'.$item['file_name']; ?>"/>

@@ -6,7 +6,7 @@ class Photo_model extends CI_Model {
 
     function get_photo() {
 
-        $query = $this->db->limit('5');
+        $query = $this->db->limit('6');
         $query = $this->db->order_by('id', 'desc');
         $query = $this->db->get('photo');
         return $query->result_array();
@@ -46,7 +46,7 @@ class Photo_model extends CI_Model {
     }
     public function get_home_slider_data()
     {
-        $query = $this->db->query("SELECT file_name AS src, date_created,'photo' AS `type` FROM `photo` UNION SELECT `url` AS src, date_created,'video' AS `type` FROM `video` ORDER BY `date_created` DESC LIMIT 4");
+        $query = $this->db->query("SELECT file_name AS src, date_created,'photo' AS `type` FROM `photo` UNION SELECT `url` AS src, date_created,'video' AS `type` FROM `video` ORDER BY `date_created` ASC LIMIT 4");
         $data = $query->result_array();
         $response = array();
         foreach ($data as $item) {

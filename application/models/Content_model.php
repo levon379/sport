@@ -2,21 +2,27 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Page_model extends CI_Model
+class Content_model extends CI_Model
 {
 
     function get_page()
     {
         $this->db->limit('3');
-        $this->db->order_by('id', 'desc');
-        $query = $this->db->get('page');
+        $query = $this->db->get('content');
         return $query->result_array();
+    }
+    function get_about_us()
+    {
+        $this->db->limit('1');
+        $this->db->order_by('id', 'desc');
+        $query = $this->db->get('content');
+        return $query->row();
     }
 
     function get_page_by_id($id)
     {
         $this->db->where('id', $id);
-        $query = $this->db->get('page');
+        $query = $this->db->get('content');
         return $query->row();
     }
 
@@ -30,28 +36,19 @@ class Page_model extends CI_Model
         $from = $offset;
         $this->db->order_by("id", "desc");
         $this->db->limit($per_page, $from);
-        $query = $this->db->get("page");
+        $query = $this->db->get("content");
         $result = $query->result_array();
         return $result;
     }
 
     function edit_page($data)
     {
-        $this->db->update('page', $data, array('id' => $data['id']));
+        $this->db->update('content', $data, array('id' => $data['id']));
     }
 
-    function add_page($data)
-    {
 
-        $this->db->insert('page', $data);
-    }
 
-    function delete_page($id)
-    {
 
-        $this->db->where('id', $id);
-        $this->db->delete('page');
-    }
 
 
 }
