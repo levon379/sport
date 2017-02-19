@@ -2,26 +2,26 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class News_model extends CI_Model
+class Page_model extends CI_Model
 {
 
-    function get_news()
+    function get_page()
     {
         $this->db->limit('3');
         $this->db->order_by('id', 'desc');
-        $query = $this->db->get('news');
+        $query = $this->db->get('page');
         return $query->result_array();
     }
 
-    function get_news_by_id($id)
+    function get_page_by_id($id)
     {
         $this->db->where('id', $id);
-        $query = $this->db->get('news');
+        $query = $this->db->get('page');
         return $query->row();
     }
 
 /////////////////////////admin/////////////////////////////
-    function get_all_news($offset, $per_page = null)
+    function get_all_page($offset, $per_page = null)
     {
         $offset = (int) $offset;
         if ($offset < 0) {
@@ -30,27 +30,27 @@ class News_model extends CI_Model
         $from = $offset;
         $this->db->order_by("id", "desc");
         $this->db->limit($per_page, $from);
-        $query = $this->db->get("news");
+        $query = $this->db->get("page");
         $result = $query->result_array();
         return $result;
     }
 
-    function edit_news($data)
+    function edit_page($data)
     {
-        $this->db->update('news', $data, array('id' => $data['id']));
+        $this->db->update('page', $data, array('id' => $data['id']));
     }
 
-    function add_news($data)
+    function add_page($data)
     {
 
-        $this->db->insert('news', $data);
+        $this->db->insert('page', $data);
     }
 
-    function delete_news($id)
+    function delete_page($id)
     {
 
         $this->db->where('id', $id);
-        $this->db->delete('news');
+        $this->db->delete('page');
     }
 
 

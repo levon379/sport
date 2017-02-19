@@ -17,7 +17,7 @@
                 <h6><?=date("d.m.y", strtotime($items['date_created'])) ?></h6>
                 <p><?=substr($items['description'], 0, 300);?> ...</p>
 
-                <a href="<?= base_url().'welcome/get_news/'.$items['id']; ?>" class="btn btn-default our_news_btn">
+                <a href="<?= base_url().'home/get_news/'.$items['id']; ?>" class="btn btn-default our_news_btn">
                     View more...
                     <i class="fa fa-arrow-right"></i>
                 </a>

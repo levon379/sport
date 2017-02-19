@@ -42,43 +42,20 @@
             <div class="about-cover-div">
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-xs-4 school-bio-records-image-container">
-                            <img src="<?= base_url() . 'public/img/' . $school[0]['image']; ?>" width="100%"
+                      <?php   foreach ($page as $item) : ?>
+                        <div class="col-lg-4 col-md-4 col-xs-4 page-bio-records-image-container">
+                            <img src="<?= base_url() . 'public/uploads/page/' . $item['file_name']; ?>" width="100%"
                                  class="about-img">
 
-                            <h1 class="about-title"><?= $school[0]['title']; ?></h1>
+                            <h1 class="about-title"><?= $item['title']; ?></h1>
                             <p class="about-description">
-                                <?= substr($school[0]['description'], 0, 250); ?>...
+                                <?= substr($item['description'], 0, 220); ?>...
                             </p>
-                            <a href="<?php echo site_url('welcome/school') ?>" class="btn about-button">see more...</a>
+                            <a href="<?=base_url() .'home/get_page/'. $item['id'] ?>" class="btn about-button">see more...</a>
 
                         </div>
-                        <div class="col-lg-4 col-md-4 col-xs-4 school-bio-records-image-container">
-                            <img src="<?= base_url() . 'public/img/bio.png'; ?>" width="100%"
-                                 class="about-img">
-                            <h1 class="about-title">BIOGRAPHY</h1>
-                            <p class="about-description">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        <?php   endforeach; ?>
 
-                                Lorem Ipsum has been
-                            </p>
-                            <a href="" class="btn about-button">see more...</a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-xs-4 school-bio-records-image-container">
-                            <img src="<?= base_url() . 'public/img/records.png'; ?>" width="100%"
-                                 class="about-img">
-                            <h1 class="about-title">RECORDS</h1>
-                            <p class="about-description">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-
-                                Lorem Ipsum has been
-                            </p>
-                            <a href="" class="btn about-button">see more...</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -100,7 +77,7 @@
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                 Lorem Ipsum has been
                             </p>
-                            <a href="#" class="btn button-video">VIEW ALL VIEDEOS</a>
+                            <a href="<?= base_url() . 'home/get_all_video/'; ?>" class="btn button-video">VIEW ALL VIEDEOS</a>
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
@@ -263,7 +240,7 @@
             <!--            <img src="../public/bootstrap/img/grad_cover.png" />-->
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10  col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <span class="title-head-our-news">OUR NEWS</span>
-                <a href="<?= base_url() . 'welcome/get_all_news/'; ?>">
+                <a href="<?= base_url() . 'home/get_all_news/'; ?>">
                     <span class="link-our-news">View all</span>
                 </a>
                 <div class="row bottom-border-our-news">
@@ -279,7 +256,7 @@
                                 <?= substr($item['description'], 0, 250); ?>...
                             </p>
                             <p>
-                                <a href="<?= base_url() . 'welcome/get_news/' . $item['id']; ?>" class="button-our-news">View
+                                <a href="<?= base_url() . 'home/get_news/' . $item['id']; ?>" class="button-our-news">View
                                     more</a>
                             </p>
                         </div>

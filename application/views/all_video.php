@@ -2,7 +2,7 @@
 
 
 <div class="col-lg-10 col-lg-offset-1 col-md-10  col-md-offset-1  col-sm-10 col-sm-offset-2 col-sm-10 col-xs-10 col-xs-offset-1 ">
-        <h1>All Video</h1>
+        <h1>All Videos</h1>
         <hr>
         <?php
 

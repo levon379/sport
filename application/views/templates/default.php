@@ -27,7 +27,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="<?= base_url().'welcome';?>">
+                <a class="navbar-brand" href="<?= base_url().'home';?>">
                     Home
                 </a>
             </div>
@@ -35,12 +35,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="<?= base_url().'welcome/school';?>">School</a></li>
-                    <li><a href="<?= base_url().'welcome/biography';?>">Bio</a></li>
-                    <li><a href="<?= base_url().'welcome/records';?>">Records</a></li>
-                    <li><a href="<?= base_url().'welcome/get_all_news/';?>">News</a></li>
-                    <li><a href="<?= base_url().'welcome/get_all_photo';?>">Photo</a></li>
-                    <li><a href="<?= base_url().'welcome/get_all_video';?>">Video</a></li>
+                    <li><a href="<?= base_url().'home/get_all_news/';?>">News</a></li>
+                    <li><a href="<?= base_url().'home/get_all_photo';?>">Photo</a></li>
+                    <li><a href="<?= base_url().'home/get_all_video';?>">Video</a></li>
                 </ul>
             </div>
         </div>

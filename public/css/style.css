@@ -76,7 +76,7 @@
     color: white;
 }
 .about-button{
-    width:48%;
+    width:140px;
     font-size:128% !important;
     background-color:white;
     color:#272727;
@@ -129,7 +129,7 @@
 .title-our-news{
     color:white;
     font-weight: bold;
-    font-size:150%;
+    font-size:125%;
     margin-top: -7px;
     width:103%
 }

@@ -36,7 +36,7 @@ if(($this->session->userdata('is_client_login')==false))
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="<?= base_url().'welcome';?>">
+                <a class="navbar-brand" href="<?= base_url().'home';?>">
                     Home
                 </a>
             </div>
@@ -45,6 +45,7 @@ if(($this->session->userdata('is_client_login')==false))
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="<?= base_url().'admin/news';?>">News</a></li>
+                    <li><a href="<?= base_url().'admin/page';?>">Page</a></li>
                     <li><a href="<?= base_url().'admin/photo';?>">Photo</a></li>
                     <li><a href="<?= base_url().'admin/video';?>">Video</a></li>
                 </ul>

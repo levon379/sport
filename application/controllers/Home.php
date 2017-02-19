@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Home extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,21 +23,21 @@ class Welcome extends CI_Controller {
 		$this->load->model('News_model');
 		$data['news'] = $this->News_model->get_news();
 
-		$this->load->model('School_model');
-		$data['school'] = $this->School_model->get_school();
+		$this->load->model('Page_model');
+		$data['page'] = $this->Page_model->get_page();
 
 		$this->load->model('Photo_model');
 		$data['photo'] = $this->Photo_model->get_photo();
 		$data['slider_data'] = $this->Photo_model->get_home_slider_data();
 
-		$this->load->view('welcome_message', $data);
+		$this->load->view('home', $data);
 	}
-	public function school()
+	public function page()
 	{
 		$this->load->model('School_model');
-		$data['school'] = $this->School_model->get_school();
+		$data['page'] = $this->School_model->get_school();
 		$data['title'] = 'School';
-		$this->template->load('default', 'school', $data);
+		$this->template->load('default', 'page', $data);
 	}
 
 	public function get_all_news($id = null)
@@ -46,7 +46,7 @@ class Welcome extends CI_Controller {
 		$this->load->library('form_validation');
 		$config['base_url'] = base_url() . 'index.php/welcome/get_all_news';
 		$config['total_rows'] = $this->db->count_all('news');
-		$config['per_page'] = 4;
+		$config['per_page'] = 6;
 		$config['full_tag_open'] = '<ul class="pagination">';
 		$config['full_tag_close'] = '</ul>';
 		$config['first_link'] = false;
@@ -79,7 +79,7 @@ class Welcome extends CI_Controller {
 		$this->load->library('form_validation');
 		$config['base_url'] = base_url() . 'index.php/welcome/get_all_video';
 		$config['total_rows'] = $this->db->count_all('video');
-		$config['per_page'] = 1;
+		$config['per_page'] = 6;
 		$config['full_tag_open'] = '<ul class="pagination">';
 		$config['full_tag_close'] = '</ul>';
 		$config['first_link'] = false;
@@ -112,7 +112,7 @@ class Welcome extends CI_Controller {
 		$this->load->library('form_validation');
 		$config['base_url'] = base_url() . 'index.php/welcome/get_all_photo';
 		$config['total_rows'] = $this->db->count_all('photo');
-		$config['per_page'] = 3;
+		$config['per_page'] = 6;
 		$config['full_tag_open'] = '<ul class="pagination">';
 		$config['full_tag_close'] = '</ul>';
 		$config['first_link'] = false;
@@ -145,6 +145,13 @@ class Welcome extends CI_Controller {
 		$data['news_show'] = $this->news_model->get_news_by_id($id);
 		$data['title'] = 'News';
 		$this->template->load('default', 'news_show', $data);
+	}
+	public function get_page($id)
+	{
+		$this->load->model('page_model');
+		$data['page_show'] = $this->page_model->get_page_by_id($id);
+		$data['title'] = 'Page';
+		$this->template->load('default', 'page_show', $data);
 	}
 
 

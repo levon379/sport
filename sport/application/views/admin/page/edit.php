@@ -1,7 +1,7 @@
 
     <h1>Edit News</h1>
     <hr>
-            <form method="post" class="form-horizontal" id="form_news" action="<?= base_url().'admin/news/edit_news_save';?>" enctype="multipart/form-data">
+            <form method="post" class="form-horizontal" id="form_news" action="<?= base_url().'/admin/news/edit_news_save';?>" enctype="multipart/form-data">
                 <input type="hidden" value="<?=$news_show->id; ?>" name="id" >
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label">Title</label>

@@ -13,7 +13,7 @@ class Video extends CI_Controller {
         $this->load->library('form_validation');
         $config['base_url'] = base_url() . 'admin/video/index';
         $config['total_rows'] = $this->db->count_all('video');
-        $config['per_page'] = 1;
+        $config['per_page'] = 3;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_link'] = false;
