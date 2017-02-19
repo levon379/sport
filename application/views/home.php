@@ -138,99 +138,27 @@
         </div>
 
         <div class="row cover-photo">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-
-                <div class="col-md-4 col-sm-4 co-xs-4 gal-item">
-                    <div class="box">
-                        <a href="#" data-toggle="modal" data-target="#2">
-                            <img src="<?= base_url() . 'public/img/records.png'; ?>">
-                        </a>
-                        <div class="modal fade" id="2" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 image_size">
+                <?php   foreach ($photo as $item) : ?>
+                    <div class="gal-item">
+                        <div class="box">
+                            <a href="#" data-toggle="modal" data-target="#<?=$item['id']; ?>">
+                                <img src="<?= base_url() . 'public/uploads/photo/'.$item['file_name']; ?>"/>
+                            </a>
+                            <div class="modal fade" id="<?=$item['id']; ?>" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                                 aria-hidden="true">×</span></button>
-                                    <div class="modal-body">
-                                        <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
+                                        <div class="modal-body">
+                                            <img src="<?= base_url() . 'public/uploads/photo/'.$item['file_name']; ?>"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-8 col-sm-8 co-xs-8 gal-item">
-                    <div class="box">
-                        <a href="#" data-toggle="modal" data-target="#1">
-                            <img src="<?= base_url() . 'public/img/records.png'; ?>">
-                        </a>
-                        <div class="modal fade" id="1" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                                aria-hidden="true">×</span></button>
-                                    <div class="modal-body">
-                                        <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 co-xs-3 gal-item">
-                    <div class="box">
-                        <a href="#" data-toggle="modal" data-target="#3">
-                            <img src="<?= base_url() . 'public/img/records.png'; ?>">
-                        </a>
-                        <div class="modal fade" id="3" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                                aria-hidden="true">×</span></button>
-                                    <div class="modal-body">
-                                        <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 co-xs-3 gal-item">
-                    <div class="box">
-                        <a href="#" data-toggle="modal" data-target="#4">
-                            <img src="<?= base_url() . 'public/img/records.png'; ?>">
-                        </a>
-                        <div class="modal fade" id="4" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                                aria-hidden="true">×</span></button>
-                                    <div class="modal-body">
-                                        <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 co-xs-3 gal-item">
-                    <div class="box">
-                        <a href="#" data-toggle="modal" data-target="#5">
-                            <img src="<?= base_url() . 'public/img/records.png'; ?>">
-                        </a>
-                        <div class="modal fade" id="5" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                                aria-hidden="true">×</span></button>
-                                    <div class="modal-body">
-                                        <img src="<?= base_url() . 'public/img/records.png'; ?>"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php   endforeach; ?>
             </div>
         </div>
         <!-- photo galery end -->

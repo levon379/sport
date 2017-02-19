@@ -32,13 +32,7 @@ class Home extends CI_Controller {
 
 		$this->load->view('home', $data);
 	}
-	public function page()
-	{
-		$this->load->model('School_model');
-		$data['page'] = $this->School_model->get_school();
-		$data['title'] = 'School';
-		$this->template->load('default', 'page', $data);
-	}
+
 
 	public function get_all_news($id = null)
 	{
