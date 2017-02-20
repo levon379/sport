@@ -9,7 +9,7 @@
 }
 .about-cover {
     background-color: rgb(123, 15, 15) !important;
-    height:350px;
+    padding-bottom: 30px;
 }
 .grad {
     background: url("../img/ournews.png") no-repeat center center fixed;
